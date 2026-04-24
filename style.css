@@ -136,7 +136,8 @@ body {
     align-items: center;
     gap: 0px;
     opacity: 0; /* Hidden until loader content fades in */
-    pointer-events: none;
+    pointer-events: auto; /* Re-enabled for interaction */
+    cursor: pointer;
 }
 
 #rotating-flower {

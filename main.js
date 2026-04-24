@@ -14,6 +14,17 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     requestAnimationFrame(raf);
 
+    // Home Logo Logic
+    const logoHome = document.getElementById("main-logo-wrapper");
+    if (logoHome) {
+        logoHome.addEventListener("click", () => {
+            lenis.scrollTo(0, {
+                duration: 2.5,
+                easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t))
+            });
+        });
+    }
+
     // Navigation Logic
     document.getElementById("nav-acco").addEventListener("click", (e) => {
         e.preventDefault();
