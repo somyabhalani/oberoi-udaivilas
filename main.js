@@ -166,13 +166,14 @@ document.addEventListener("DOMContentLoaded", () => {
                     duration: 1.8, 
                     ease: "expo.inOut" 
                 }, "-=0.2")
-               .to("#luxury-navbar", { 
+               .to(["#luxury-navbar", "#book-now-floating"], { 
                     opacity: 1, 
                     y: 0, 
                     duration: 1, 
                     ease: "power2.out",
                     onStart: () => {
                         document.getElementById("luxury-navbar").style.pointerEvents = "auto";
+                        document.getElementById("book-now-floating").style.pointerEvents = "auto";
                     }
                 }, "-=0.8");
 
