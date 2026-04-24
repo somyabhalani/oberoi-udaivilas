@@ -1,0 +1,857 @@
+:root {
+    --gold: #c5a059;
+    --dark: #0a0a0a;
+    --white: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #ffffff;
+    color: #333333;
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+}
+
+/* Loader */
+#loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: #ffffff;
+    z-index: 9999;
+    pointer-events: none;
+}
+
+/* Logo Identity */
+#logo-container {
+    position: fixed;
+    top: 40px;
+    left: 40px;
+    z-index: 10000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0px; /* Zero gap to pull elements together */
+}
+
+#rotating-flower {
+    width: 55px;
+    height: 55px;
+    animation: rotate-flower 20s linear infinite;
+    margin-bottom: -10px; /* Pulls logo up */
+}
+
+#main-logo-wrapper {
+    height: 100px; /* Controlled height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#main-logo {
+    height: 100%;
+    margin-top: -20px;
+    margin-left: 10px; /* Micro-shift to the right for centering */
+    filter: brightness(0);
+}
+
+@keyframes rotate-flower {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+#main-logo-wrapper {
+    height: 80px;
+    overflow: hidden;
+}
+
+#main-logo {
+    height: 100%;
+    filter: brightness(0); /* Black Logo for White Background */
+}
+
+/* Luxury Navbar */
+#luxury-navbar {
+    position: fixed;
+    top: 30px;
+    right: 40px;
+    z-index: 10000;
+    background: rgba(255, 255, 255, 0.25); /* High Liquid Transparency */
+    backdrop-filter: blur(25px) saturate(180%); /* Deep Glass Blur */
+    -webkit-backdrop-filter: blur(25px) saturate(180%);
+    padding: 12px 40px;
+    border-radius: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Glass Highlight Border */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08), 
+                inset 0 0 15px rgba(255, 255, 255, 0.1); /* Inner & Outer Glow */
+    transition: all 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+    opacity: 0; /* Initially Hidden */
+    pointer-events: none;
+    transform: translateY(-20px);
+}
+
+.nav-links {
+    display: flex;
+    gap: 35px;
+}
+
+.nav-links a {
+    color: #000000;
+    text-decoration: none;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--gold);
+}
+
+#book-now-btn {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    background: var(--gold);
+    color: #000;
+    padding: 18px 45px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 13px;
+    z-index: 10000;
+    box-shadow: 0 15px 35px rgba(197, 160, 89, 0.3);
+    transition: transform 0.3s ease;
+    text-transform: uppercase;
+}
+
+#book-now-btn:hover {
+    transform: translateY(-5px);
+}
+
+/* Main Story Canvas */
+#frame-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 5;
+    background: #ffffff;
+}
+
+#main-container {
+    position: relative;
+    width: 100%;
+    z-index: 10;
+}
+
+#scroll-section {
+    height: 400vh;
+}
+
+/* Wedding Card */
+#wedding-section {
+    position: relative;
+    width: 100%;
+    padding: 200px 0;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#wedding-card-container {
+    width: 90%;
+    max-width: 1200px;
+    height: 75vh;
+    border-radius: 40px;
+    overflow: hidden;
+    box-shadow: 0 40px 80px rgba(0,0,0,0.1);
+    opacity: 0;
+    transform: translateY(100px);
+}
+
+#wedding-card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Story Signatures */
+.suite-signature-section, #story-acco-signature-section {
+    position: relative;
+    width: 100%;
+    padding: 100px 0 20px 0; /* Compact Editorial Pacing */
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.signature-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0px; /* Zero gap for tighter overlap */
+}
+
+#story-acco-signature, #story-suites-signature, #story-rooms-signature, #story-dining-signature, #story-restaurants-signature, #story-surya-signature, #story-bar-signature, #story-attractions-signature, 
+.luxury-suite-sig-1, .luxury-suite-sig-2 {
+    font-family: 'Pinyon Script', cursive;
+    color: var(--gold);
+    white-space: nowrap;
+    opacity: 0;
+    clip-path: inset(0 100% 0 0);
+}
+
+#story-acco-signature, .luxury-suite-sig-1, #story-rooms-signature, #story-dining-signature, #story-restaurants-signature, #story-bar-signature {
+    font-size: clamp(80px, 12vw, 150px);
+}
+
+#story-surya-signature {
+    font-size: clamp(40px, 5vw, 60px);
+    margin-bottom: 20px;
+}
+
+#story-surya-signature-section {
+    justify-content: flex-start !important;
+}
+
+#story-suites-signature, .luxury-suite-sig-2 {
+    font-size: clamp(60px, 9vw, 120px);
+    margin-top: -60px; /* Increased overlap for tighter alignment */
+    margin-left: 100px;
+}
+
+/* Story Chapter & Gallery */
+#story-chapter {
+    position: relative;
+    width: 100%;
+    background-color: #ffffff;
+    padding-bottom: 200px;
+}
+
+#accommodation-story {
+    padding: 100px 5%;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+.kohinoor-main-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(40px, 8vw, 70px);
+    font-weight: 700;
+    color: var(--gold);
+    margin-bottom: 10px;
+}
+
+.kohinoor-sub-desc {
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    color: #666;
+    letter-spacing: 2px;
+}
+
+.acco-gallery-container {
+    position: relative;
+    width: 100%;
+}
+
+.acco-gallery, #acco-gallery, #luxury-gallery {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    gap: 30px !important;
+    overflow-x: auto !important;
+    padding: 40px 0 !important;
+    scrollbar-width: none !important;
+    scroll-behavior: smooth !important;
+    width: 100% !important;
+}
+
+.acco-gallery::-webkit-scrollbar, #acco-gallery::-webkit-scrollbar, #luxury-gallery::-webkit-scrollbar {
+    display: none !important;
+}
+
+/* Gallery Thumbnails */
+.acco-thumb-wrapper {
+    position: relative;
+    height: 400px;
+    width: 600px !important; /* Fixed Cinematic Width */
+    min-width: 600px !important; /* Absolute Floor */
+    border-radius: 30px;
+    overflow: hidden !important;
+    cursor: pointer;
+    flex-shrink: 0 !important;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    transition: all 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+    z-index: 10;
+}
+
+.acco-thumb-wrapper .acco-thumb {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    display: block !important;
+    transform: scale(1);
+    transition: transform 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) !important;
+    transform-origin: center center;
+}
+
+.acco-thumb-wrapper:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 40px 80px rgba(0,0,0,0.2);
+    z-index: 20;
+}
+
+.acco-thumb-wrapper:hover .acco-thumb {
+    transform: scale(1.25) !important; /* Bold, unmistakable zoom */
+}
+
+/* Gallery Navigation Arrows */
+.gallery-nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 60px;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 100;
+    transition: all 0.3s ease;
+    font-size: 20px;
+    color: #000;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+.gallery-nav-btn:hover {
+    background: rgba(255, 255, 255, 0.5);
+    transform: translateY(-50%) scale(1.1);
+}
+
+#prev-btn, #luxury-prev-btn, #premier-prev-btn, #garden-prev-btn, #mewar-prev-btn { left: 20px; }
+#next-btn, #luxury-next-btn, #premier-next-btn, #garden-next-btn, #mewar-next-btn { right: 20px; }
+
+/* Suite Details Spread Section */
+.suite-details-spread {
+    margin-top: 80px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
+    align-items: start;
+}
+
+.kohinoor-description {
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    line-height: 1.8;
+    color: #444;
+}
+
+.kohinoor-description .lead-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    color: #000;
+    line-height: 1.5;
+    margin-bottom: 30px;
+    font-weight: 400;
+}
+
+.kohinoor-features {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding-left: 50px;
+    border-left: 1px solid rgba(0,0,0,0.05);
+}
+
+.feature-item {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.feature-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--gold);
+    font-weight: 700;
+}
+
+.feature-value {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    color: #222;
+}
+
+.feature-note {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    color: #888;
+    margin-top: 20px;
+    font-style: italic;
+}
+
+/* Second Highlight Section */
+.suite-separator {
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(197, 160, 89, 0.3), transparent);
+    margin: 100px 0;
+}
+
+#kohinoor-details-v2 {
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+    padding-bottom: 100px;
+}
+
+.v2-intro {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 60px;
+    font-style: italic;
+}
+
+.v2-specs-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.v2-spec-box label {
+    display: block;
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--gold);
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.v2-spec-box p {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    color: #000;
+}
+
+.v2-note {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    color: #999;
+    margin-top: 40px;
+}
+
+/* Suite Amenities Section */
+.suite-amenities-section {
+    margin-top: 100px;
+    padding: 80px 0;
+    border-top: 1px solid rgba(0,0,0,0.05);
+}
+
+.amenities-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 40px;
+    color: var(--gold);
+    margin-bottom: 60px;
+    text-align: center;
+}
+
+.amenities-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 60px;
+}
+
+.amenity-cat h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    color: #000;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid var(--gold);
+    display: inline-block;
+}
+
+.signature-group {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 0px; 
+}
+
+.writing-sig {
+    font-family: 'Pinyon Script', cursive;
+    font-size: clamp(4rem, 10vw, 8rem);
+    color: #c5a059;
+    margin: 0;
+    line-height: 1;
+    opacity: 0;
+    clip-path: inset(0 100% 0 0);
+    white-space: nowrap;
+    text-align: center;
+}
+
+.suite-signature-section {
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    position: relative;
+    z-index: 10;
+}
+
+.amenity-cat ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.amenity-cat li {
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    color: #555;
+    line-height: 1.5;
+    position: relative;
+    padding-left: 20px;
+}
+
+.amenity-cat li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 6px;
+    height: 6px;
+    background: var(--gold);
+    border-radius: 50%;
+}
+
+/* Royal Gold Reveal Sections */
+.royal-reveal-section {
+    margin-top: 0; /* Eliminated Gap */
+    padding: 60px 0;
+    text-align: left;
+    border-top: 1px solid rgba(0,0,0,0.05);
+}
+
+.gold-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(35px, 6vw, 60px);
+    font-weight: 700;
+    color: var(--gold); /* Royal Gold Style */
+    margin-bottom: 25px;
+    letter-spacing: -0.5px;
+}
+
+.minimal-subtitle {
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    color: #888;
+    letter-spacing: 4px; /* Minimal and Spaced */
+    text-transform: uppercase;
+    font-weight: 300;
+}
+
+#lightbox-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.98);
+    z-index: 20000;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(20px);
+}
+
+#lightbox-img {
+    max-width: 90%;
+    max-height: 85vh;
+    border-radius: 20px;
+    box-shadow: 0 50px 100px rgba(0,0,0,0.1);
+}
+
+#close-lightbox {
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    color: #000;
+    font-size: 40px;
+    cursor: pointer;
+    font-family: serif;
+}
+
+/* Palace Hero Section */
+.palace-hero-section {
+    margin: 120px 0;
+    padding: 0 40px;
+}
+
+.hero-frame {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    border-radius: 40px;
+    overflow: hidden;
+    box-shadow: 0 40px 80px rgba(0,0,0,0.1);
+    opacity: 0;
+    transform: translateY(50px);
+}
+
+.hero-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 1.2s ease;
+}
+
+.hero-frame:hover .hero-image {
+    transform: scale(1.05);
+}
+
+/* Dining Intro Section */
+.dining-intro-section {
+    padding: 80px 5%;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.dining-intro-text {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(18px, 2vw, 24px); /* Medium size */
+    line-height: 1.8;
+    color: #444;
+    opacity: 0;
+    transform: translateX(50px); /* Initial right state */
+}
+
+/* Menu Link Styles */
+.menu-link {
+    display: inline-block;
+    position: relative;
+    z-index: 1000;
+    color: #c5a059;
+    text-decoration: none;
+    padding-bottom: 4px;
+    border-bottom: 1px solid rgba(197, 160, 89, 0.3);
+    transition: all 0.3s ease;
+    cursor: pointer !important;
+    pointer-events: auto !important;
+}
+
+.menu-link:hover {
+    color: #d4b57e;
+    border-bottom: 1px solid #c5a059;
+    transform: translateX(5px);
+}
+
+/* Bar Visual Spread - Stately side-by-side */
+.bar-visual-spread {
+    display: flex;
+    gap: 20px;
+    padding: 0 5% 100px 5%;
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 100; /* Force top-layer authority */
+    pointer-events: auto !important;
+}
+
+.bar-photo-wrapper {
+    flex: 1;
+    height: 50vh;
+    border-radius: 40px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    border: 2px solid transparent; /* Prepare for bloom */
+    transition: border-color 0.4s ease;
+    pointer-events: auto !important;
+}
+
+.bar-photo-wrapper:hover {
+    border-color: #c5a059; /* Gold border bloom */
+}
+
+.bar-visual-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
+    pointer-events: auto !important;
+}
+
+.bar-photo-wrapper:hover .bar-visual-img,
+.bar-visual-img:hover {
+    transform: scale(1.2) !important;
+    filter: brightness(1.1) !important;
+}
+
+/* Promenade Gallery Horizontal Enforcement */
+#promenade-gallery {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    gap: 15px;
+    padding: 0 5%;
+    scrollbar-width: none; /* Hide for clean look */
+}
+
+#promenade-gallery::-webkit-scrollbar {
+    display: none;
+}
+
+#promenade-gallery .acco-thumb-wrapper {
+    flex: 0 0 45vw !important;
+    width: 45vw !important;
+}
+
+#prom-prev, #prom-next {
+    z-index: 150 !important; /* Force top-layer authority */
+    background: rgba(255, 255, 255, 0.9);
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    color: #c5a059;
+    font-size: 20px;
+    transition: all 0.4s ease;
+}
+
+#prom-prev:hover, #prom-next:hover {
+    background: #c5a059;
+    color: white;
+    transform: translateY(-50%) scale(1.1);
+}
+
+#prom-prev { left: 2%; }
+#prom-next { right: 2%; }
+
+/* Luxury Footer */
+#luxury-footer {
+    position: relative;
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-color: #000;
+}
+
+.footer-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 120%; /* For parallax */
+    background: url('public/footer_bg.png') no-repeat center center;
+    background-size: cover;
+    z-index: 1;
+}
+
+.footer-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(0,0,0,0.4) 30%, rgba(0,0,0,0.7) 100%);
+    z-index: 2;
+}
+
+.footer-content {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    color: #ffffff;
+    width: 90%;
+    max-width: 1200px;
+}
+
+.footer-sig {
+    font-family: 'Pinyon Script', cursive;
+    font-size: clamp(60px, 8vw, 120px);
+    color: var(--gold);
+    margin-bottom: 10px;
+    text-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.footer-tagline {
+    font-family: 'Inter', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 10px;
+    font-size: 14px;
+    font-weight: 300;
+    opacity: 0.8;
+}
+
+.footer-divider {
+    width: 100px;
+    height: 1px;
+    background: var(--gold);
+    margin: 60px auto;
+}
+
+.footer-info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.designed-by {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+.designed-by span {
+    color: var(--gold);
+    font-weight: 700;
+}
+
+.copyright {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    opacity: 0.6;
+}
+

@@ -1,0 +1,1257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Oberoi Udaivilas | Majestic Experience</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Pinyon+Script&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script>
+</head>
+<body>
+
+    <!-- White Loader -->
+    <div id="loader"></div>
+
+    <!-- Brand Identity (Rotating Flower + Transparent Logo) -->
+    <div id="logo-container">
+        <img src="public/flower.png" id="rotating-flower" alt="">
+        <div id="main-logo-wrapper" style="cursor: pointer;" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+            <img src="public/logo.png" id="main-logo" alt="The Oberoi Udaivilas">
+        </div>
+    </div>
+
+    <!-- Luxury Navbar -->
+    <nav id="luxury-navbar">
+        <div class="nav-links">
+            <a href="#story-acco-signature-section" id="nav-acco">Accommodation</a>
+            <a href="#story-restaurants-signature-section" id="nav-dining">Dining</a>
+            <a href="#story-experiences-signature-section" id="nav-experience">Experience</a>
+            <a href="#story-attractions-signature-section" id="nav-attractions">Attractions</a>
+        </div>
+    </nav>
+
+    <main id="main-container">
+        <canvas id="frame-canvas"></canvas>
+        
+        <section id="scroll-section">
+            <div class="scroll-spacer"></div>
+        </section>
+
+        <section id="wedding-section">
+            <div id="wedding-card-container">
+                <img src="public/wedding_bg.png" alt="Weddings at Udaivilas" id="wedding-card-img">
+            </div>
+        </section>
+
+        <section id="story-acco-signature-section">
+            <div class="signature-group">
+                <h2 id="story-acco-signature">Accommodations</h2>
+                <h2 id="story-suites-signature">Suites</h2>
+            </div>
+        </section>
+
+        <section id="story-chapter">
+            <div id="accommodation-story">
+                <div class="kohinoor-gallery-header">
+                    <h2 class="kohinoor-main-title">Kohinoor Suite with Private Pool</h2>
+                    <p class="kohinoor-sub-desc">Our crowning glory, especially for you.</p>
+                </div>
+                <div class="acco-gallery-container" id="acco-gallery-container">
+                    <div class="gallery-nav-btn" id="prev-btn">←</div>
+                    <div class="gallery-nav-btn" id="next-btn">→</div>
+                    <div id="acco-gallery" class="acco-gallery">
+                        <div class="acco-thumb-wrapper"><img src="./public/acco/1.png" class="acco-thumb" alt="Room 1"></div>
+                        <div class="acco-thumb-wrapper"><img src="./public/acco/2.png" class="acco-thumb" alt="Room 2"></div>
+                        <div class="acco-thumb-wrapper"><img src="./public/acco/3.png" class="acco-thumb" alt="Room 3"></div>
+                        <div class="acco-thumb-wrapper"><img src="./public/acco/4.png" class="acco-thumb" alt="Room 4"></div>
+                        <div class="acco-thumb-wrapper"><img src="./public/acco/5.png" class="acco-thumb" alt="Room 5"></div>
+                        <div class="acco-thumb-wrapper"><img src="./public/acco/6.png" class="acco-thumb" alt="Room 6"></div>
+                        <div class="acco-thumb-wrapper"><img src="./public/acco/7.png" class="acco-thumb" alt="Room 7"></div>
+                        <div class="acco-thumb-wrapper"><img src="./public/acco/8.png" class="acco-thumb" alt="Room 8"></div>
+                    </div>
+                </div>
+
+                <div class="suite-details-spread">
+                    <div class="kohinoor-description">
+                        <p class="lead-text">With its gold domed ceilings, mirror mosaics and hand carved marble privacy screens, the Kohinoor Suite with 246 square metres interiors, is a rarity.</p>
+                        <p>A master bedroom and twin bedroom, a spectacular dining room, living room and private pool occupy a tasteful 246 square metres. All the very latest technology, including three television sets, bring a touch of modernity to this true classic.</p>
+                    </div>
+
+                    <div class="kohinoor-features">
+                        <div class="feature-item">
+                            <span class="feature-label">View</span>
+                            <span class="feature-value">Aravalli Hills, Lake Pichola and the City Palace</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-label">Private Pool</span>
+                            <span class="feature-value">Yes</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-label">Bed Type</span>
+                            <span class="feature-value">King and twin</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-label">Total Room Size</span>
+                            <span class="feature-value">246 square metres*</span>
+                        </div>
+                        <p class="feature-note">*The size includes both interior and exterior private space of the room.</p>
+                    </div>
+                </div>
+
+                <div class="suite-amenities-section">
+                    <h2 class="amenities-title">Amenities</h2>
+                    <div class="amenities-grid">
+                        <div class="amenity-cat">
+                            <h3>Room</h3>
+                            <ul>
+                                <li>24 hour butler service</li>
+                                <li>Air conditioning, with temperature control</li>
+                                <li>12" pillow top mattress</li>
+                                <li>Pillow menu tailored to preference</li>
+                                <li>24 hour in room dining</li>
+                                <li>Fully stocked personal bar</li>
+                                <li>Espresso machine</li>
+                                <li>Selection of daily newspapers</li>
+                                <li>24 hour express laundry service</li>
+                            </ul>
+                        </div>
+                        <div class="amenity-cat">
+                            <h3>Technology</h3>
+                            <ul>
+                                <li>Electronic safe for valuables</li>
+                                <li>High speed internet (4 devices)</li>
+                                <li>Five telephones</li>
+                                <li>Three 42" LED televisions</li>
+                                <li>Volume control in bathroom</li>
+                                <li>Wide range of global channels</li>
+                                <li>Three DVD players</li>
+                                <li>iPod dock</li>
+                            </ul>
+                        </div>
+                        <div class="amenity-cat">
+                            <h3>Bathroom</h3>
+                            <ul>
+                                <li>High pressure steam shower</li>
+                                <li>Freestanding, claw-footed bathtub</li>
+                                <li>Natural Oberoi toiletries</li>
+                                <li>Hair dryer</li>
+                                <li>Hand block print bathrobes</li>
+                                <li>100% cotton towels</li>
+                                <li>Volume control in bathroom</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="royal-reveal-section">
+                    <h2 class="gold-title">Luxury Suite with Private Pool</h2>
+                    <p class="minimal-subtitle">Your own private space to relax and unwind.</p>
+                </div>
+
+                <div class="acco-gallery-container" id="luxury-gallery-container">
+                    <div class="gallery-nav-btn" id="luxury-prev-btn">←</div>
+                    <div class="gallery-nav-btn" id="luxury-next-btn">→</div>
+                    <div id="luxury-gallery" class="acco-gallery">
+                        <div class="acco-thumb-wrapper"><img src="./public/acco/luxury_1.png" class="acco-thumb" alt="Luxury 1"></div>
+                        <div class="acco-thumb-wrapper"><img src="./public/acco/luxury_2.png" class="acco-thumb" alt="Luxury 2"></div>
+                        <div class="acco-thumb-wrapper"><img src="./public/acco/luxury_3.png" class="acco-thumb" alt="Luxury 3"></div>
+                        <div class="acco-thumb-wrapper"><img src="./public/acco/luxury_4.png" class="acco-thumb" alt="Luxury 4"></div>
+                        <div class="acco-thumb-wrapper"><img src="./public/acco/luxury_5.png" class="acco-thumb" alt="Luxury 5"></div>
+                        <div class="acco-thumb-wrapper"><img src="./public/acco/luxury_6.png" class="acco-thumb" alt="Luxury 6"></div>
+                    </div>
+                </div>
+
+                <div id="luxury-details" class="suite-details-spread">
+                    <div class="kohinoor-description">
+                        <p class="lead-text">Enjoy garden views and exquisite luxury in our suites with 116 square metres interiors.</p>
+                        <p>From the elegant living room to the king size bedroom, en-suite bathroom, dining room, powder room and private courtyard. Outside, a private pool and al fresco dining space provide the perfect setting to relax and unwind.</p>
+                    </div>
+
+                    <div class="kohinoor-features">
+                        <div class="feature-item">
+                            <span class="feature-label">View</span>
+                            <span class="feature-value">Aravalli Hills, Lake Pichola and the City Palace</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-label">Private Pool</span>
+                            <span class="feature-value">Yes</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-label">Bed Type</span>
+                            <span class="feature-value">King size</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-label">Total Room Size</span>
+                            <span class="feature-value">116 square metres*</span>
+                            <span class="feature-note">*The size includes both interior and exterior private space of the room.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="suite-amenities-section">
+                    <h2 class="amenities-title">Amenities</h2>
+                    <div class="amenities-grid">
+                        <div class="amenity-cat">
+                            <h3>Room</h3>
+                            <ul>
+                                <li>24 hour butler service</li>
+                                <li>Air conditioning, with temperature control units fitted in the room</li>
+                                <li>12" pillow top mattress</li>
+                                <li>Pillow menu features a range to suit every personal preference</li>
+                                <li>24 hour in room dining</li>
+                                <li>Fully stocked personal bar</li>
+                                <li>Espresso machine</li>
+                                <li>Selection of daily newspapers</li>
+                                <li>24 hour express laundry service</li>
+                            </ul>
+                        </div>
+                        <div class="amenity-cat">
+                            <h3>Technology</h3>
+                            <ul>
+                                <li>Electronic safe for valuables</li>
+                                <li>High speed internet for up to four devices</li>
+                                <li>Three telephones</li>
+                                <li>42" LED television</li>
+                                <li>Television volume control in the bathroom</li>
+                                <li>Wide range of national and international news, sports and film channels</li>
+                                <li>DVD player</li>
+                                <li>iPod dock</li>
+                            </ul>
+                        </div>
+                        <div class="amenity-cat">
+                            <h3>Bathroom</h3>
+                            <ul>
+                                <li>High pressure shower with multiple settings, with in-built steam facility</li>
+                                <li>Freestanding, claw-footed bathtub</li>
+                                <li>Plant based toiletries, exclusive to Oberoi</li>
+                                <li>Hair dryer</li>
+                                <li>Hand block print cotton bathrobes</li>
+                                <li>100% cotton towels</li>
+                                <li>Television volume control in the bathroom</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <section id="story-rooms-signature-section" class="suite-signature-section">
+                    <div class="signature-group">
+                        <h2 id="story-rooms-signature" class="writing-sig">Rooms</h2>
+                    </div>
+                </section>
+
+                <div id="premier-room-gold" class="royal-reveal-section">
+                    <h2 class="gold-title">Premier City Palace View Room with Semi-Private Pool</h2>
+                    <p class="minimal-subtitle">A room and pool with a view.</p>
+                </div>
+
+                <div class="acco-gallery-container" id="premier-gallery-container">
+                    <div class="gallery-nav-btn" id="premier-prev-btn">←</div>
+                    <div class="gallery-nav-btn" id="premier-next-btn">→</div>
+                    <div id="premier-gallery" class="acco-gallery">
+                        <div class="acco-thumb-wrapper"><img src="./public/acco/premier_1.png" class="acco-thumb" alt="Premier 1"></div>
+                        <div class="acco-thumb-wrapper"><img src="./public/acco/premier_2.png" class="acco-thumb" alt="Premier 2"></div>
+                        <div class="acco-thumb-wrapper"><img src="./public/acco/premier_3.png" class="acco-thumb" alt="Premier 3"></div>
+                        <div class="acco-thumb-wrapper"><img src="./public/acco/premier_4.png" class="acco-thumb" alt="Premier 4"></div>
+                        <div class="acco-thumb-wrapper"><img src="./public/acco/premier_5.png" class="acco-thumb" alt="Premier 5"></div>
+                        <div class="acco-thumb-wrapper"><img src="./public/acco/premier_6.png" class="acco-thumb" alt="Premier 6"></div>
+                        <div class="acco-thumb-wrapper"><img src="./public/acco/premier_7.png" class="acco-thumb" alt="Premier 7"></div>
+                    </div>
+                </div>
+
+                <div id="premier-details" class="suite-details-spread">
+                    <div class="kohinoor-description">
+                        <p class="lead-text">Enjoy breathtaking views of the City Palace, across Lake Pichola from the comfort of your 86 square metres room.</p>
+                        <p>A semi-private pool, accessed via the private terrace, is a great place to refresh and unwind. The semi-private pool is heated from 1st November to 1st March.</p>
+                    </div>
+
+                    <div class="kohinoor-features">
+                        <div class="feature-item">
+                            <span class="feature-label">View</span>
+                            <span class="feature-value">Lake and City Palace</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-label">Bed Type</span>
+                            <span class="feature-value">King size</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-label">Total Room Size</span>
+                            <span class="feature-value">86 square metres*</span>
+                            <span class="feature-note">*The size includes both interior and exterior private space of the room.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="royal-reveal-section">
+                    <h2 class="gold-title">Premier Garden View Room with Semi-Private Pool</h2>
+                    <p class="minimal-subtitle">An experience beyond the ordinary, with a semi-private, temperature-controlled pool designed for your comfort.</p>
+                </div>
+
+                <div class="acco-gallery-container" id="garden-gallery-container">
+                    <div class="gallery-nav-btn" id="garden-prev-btn">←</div>
+                    <div class="gallery-nav-btn" id="garden-next-btn">→</div>
+                    <div id="garden-gallery" class="acco-gallery">
+                        <div class="acco-thumb-wrapper"><img src="./public/acco/garden_1.png" class="acco-thumb" alt="Garden 1"></div>
+                        <div class="acco-thumb-wrapper"><img src="./public/acco/garden_2.png" class="acco-thumb" alt="Garden 2"></div>
+                        <div class="acco-thumb-wrapper"><img src="./public/acco/garden_3.png" class="acco-thumb" alt="Garden 3"></div>
+                        <div class="acco-thumb-wrapper"><img src="./public/acco/garden_4.png" class="acco-thumb" alt="Garden 4"></div>
+                    </div>
+                </div>
+
+                <div id="garden-details" class="suite-details-spread">
+                    <div class="kohinoor-description">
+                        <p class="lead-text">Enjoy the privacy of your own garden view room with direct access to a semi-private, temperature-controlled pool.</p>
+                        <p>Whether you're taking a refreshing morning dip or unwinding at dusk, this harmonious blend of natural beauty and refined luxury offers an unparalleled sanctuary. Enjoy garden views from the naturally lit 86 square metre room. The semi-private pool is heated from 1st November to 1st March.</p>
+                    </div>
+
+                    <div class="kohinoor-features">
+                        <div class="feature-item">
+                            <span class="feature-label">View</span>
+                            <span class="feature-value">Lake and Garden</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-label">Bed Type</span>
+                            <span class="feature-value">King size</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-label">Total Room Size</span>
+                            <span class="feature-value">86 square metres*</span>
+                            <span class="feature-note">*The size includes both interior and exterior private space of the room.</span>
+                        </div>
+                    </div>
+                </div>
+                <div id="garden-amenities" class="suite-amenities-section">
+                    <h2 class="amenities-title">Amenities for room</h2>
+                    <div class="amenities-grid">
+                        <div class="amenity-cat">
+                            <h3>Room</h3>
+                            <ul>
+                                <li>Air conditioning, with temperature control units fitted in the room</li>
+                                <li>12" pillow top mattress</li>
+                                <li>Pillow menu features a range to suit every personal preference</li>
+                                <li>24 hour in room dining</li>
+                                <li>Fully stocked personal bar</li>
+                                <li>Espresso machine</li>
+                                <li>Selection of daily newspapers</li>
+                                <li>24 hour express laundry service</li>
+                            </ul>
+                        </div>
+                        <div class="amenity-cat">
+                            <h3>Technology</h3>
+                            <ul>
+                                <li>Electronic safe for valuables</li>
+                                <li>High speed internet for up to four devices</li>
+                                <li>Three telephones</li>
+                                <li>42" LED television</li>
+                                <li>Television volume control in the bathroom</li>
+                                <li>Wide range of national and international news, sports and film channels</li>
+                                <li>DVD player</li>
+                                <li>iPod dock</li>
+                            </ul>
+                        </div>
+                        <div class="amenity-cat">
+                            <h3>Bathroom</h3>
+                            <ul>
+                                <li>High pressure shower with multiple settings</li>
+                                <li>Freestanding, claw-footed bathtub</li>
+                                <li>Plant based toiletries, exclusive to Oberoi</li>
+                                <li>Hair dryer</li>
+                                <li>Hand block print cotton bathrobes</li>
+                                <li>100% cotton towels</li>
+                                <li>Television volume control in the bathroom</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="garden-hero-section" class="palace-hero-section">
+                    <div class="hero-frame">
+                        <img src="./public/acco/garden_hero.png" alt="Garden Hero" class="hero-image">
+                    </div>
+                </div>
+
+                <section id="story-restaurants-signature-section" class="suite-signature-section">
+                    <div class="signature-group">
+                        <h2 id="story-restaurants-signature" class="writing-sig">Dining</h2>
+                    </div>
+                </section>
+
+                <div class="dining-intro-section royal-reveal-section">
+                    <p class="dining-intro-text">Enjoy ambient international and Indian fine dining in our naturally lit main restaurant, or bask in the sunlight beside sweeping views from our al fresco terrace. Celebrate the one you love in our palatial evening fine-dining venue. Relax and unwind with expertly mixed drinks in the bar, and let us take care of you with our unwavering attention to your every need.</p>
+                </div>
+
+                <section id="story-restaurants-list-signature-section" class="suite-signature-section">
+                    <div class="signature-group">
+                        <h2 id="story-restaurants-list-signature" class="writing-sig">restaurants</h2>
+                    </div>
+                </section>
+
+                <div id="mewar-reveal" class="royal-reveal-section">
+                    <h2 class="gold-title">Mewar by Vineet</h2>
+                    <p class="minimal-subtitle">Inspired by the culinary heritage of the Mewar kingdom.</p>
+                </div>
+
+                <div class="acco-gallery-container" id="mewar-gallery-container">
+                    <div class="gallery-nav-btn" id="mewar-prev-btn">←</div>
+                    <div class="gallery-nav-btn" id="mewar-next-btn">→</div>
+                    <div id="mewar-gallery" class="acco-gallery">
+                        <div class="acco-thumb-wrapper"><img src="./public/acco/mewar_1.png" class="acco-thumb" alt="Mewar 1"></div>
+                        <div class="acco-thumb-wrapper"><img src="./public/acco/mewar_2.png" class="acco-thumb" alt="Mewar 2"></div>
+                        <div class="acco-thumb-wrapper"><img src="./public/acco/mewar_3.png" class="acco-thumb" alt="Mewar 3"></div>
+                        <div class="acco-thumb-wrapper"><img src="./public/acco/mewar_4.png" class="acco-thumb" alt="Mewar 4"></div>
+                    </div>
+                </div>
+
+                <div id="mewar-details" class="suite-details-spread">
+                    <div class="kohinoor-description">
+                        <p class="lead-text">Drawing inspiration from the regional houses to the rural communities of the historic Mewar kingdom, Mentor Chef Vineet Bhatia (MBE) reimagines traditional flavours with his signature finesse.</p>
+                        <p>Guests may choose from the regal Bhoj thali, à la carte selections or a seven-course tasting menu, each highlighting authentic Mewari fare. Rooted in local ingredients such as millets, legumes, and foraged greens, every dish arrives as a story of place and time.</p>
+                    </div>
+
+                    <div class="kohinoor-features">
+                        <div class="feature-item">
+                            <span class="feature-label">Phone</span>
+                            <span class="feature-value">+91 294 268 2301</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-label">Location</span>
+                            <span class="feature-value">Lake Pichola, Udaipur 313001, India</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-label">Timings</span>
+                            <div class="feature-value">
+                                <div style="margin-bottom: 5px;">Lunch: 12:30 pm to 2:30 pm</div>
+                                <div>Dinner: 7:00 pm to 10:30 pm</div>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-label">Menu</span>
+                            <span class="feature-value">
+                                <a href="./public/dining/mewar_menu.pdf" target="_blank" class="menu-link">View A-la-carte Menu →</a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <section id="story-surya-signature-section" class="suite-signature-section">
+                    <div class="signature-group">
+                        <h2 id="story-surya-signature" class="writing-sig">Suryamahal and Chandni.</h2>
+                    </div>
+                </section>
+
+                <div id="surya-details" class="suite-details-spread">
+                    <div class="kohinoor-description">
+                        <p class="lead-text">Take a seat under the blue sky, beneath the cloud-brushed dome of Suryamahal, or dine al fresco beside sweeping lake and palace views.</p>
+                        <p>Enjoy a mosaic of canopied tables caressed by live, traditional music at Chandni. Every moment here is a celebration of the majestic Udaipur landscape and world-class culinary finesse.</p>
+                    </div>
+
+                    <div class="kohinoor-features">
+                        <div class="feature-item">
+                            <span class="feature-label">Cuisine</span>
+                            <span class="feature-value">International</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-label">Timings</span>
+                            <div class="feature-value">
+                                <div style="margin-bottom: 5px;">7:00 am to 10:30 pm</div>
+                                <div style="font-size: 14px; color: #888;">Chandni is open from October to March.</div>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-label">Phone</span>
+                            <span class="feature-value">+91 294 268 2301</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-label">Menus</span>
+                            <div class="feature-value" style="display: flex; flex-direction: column; gap: 12px; margin-top: 5px;">
+                                <a href="./public/dining/surya_alacarte.pdf" target="_blank" class="menu-link">A-la-carte Menu →</a>
+                                <a href="./public/dining/surya_beverages.pdf" target="_blank" class="menu-link">Beverage List →</a>
+                                <a href="./public/dining/surya_wine.pdf" target="_blank" class="menu-link">Wine List →</a>
+                                <a href="./public/dining/surya_kids.pdf" target="_blank" class="menu-link">Children's Menu →</a>
+                                <a href="./public/dining/surya_desserts.pdf" target="_blank" class="menu-link">Dessert Menu →</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <section id="story-bar-signature-section" class="suite-signature-section">
+                    <div class="signature-group">
+                        <h2 id="story-bar-signature" class="writing-sig">bar</h2>
+                    </div>
+                </section>
+
+                <section class="royal-reveal-section" style="padding-top: 0; padding-bottom: 50px;">
+                    <div class="acco-narrative-container" style="text-align: left; align-items: flex-start;">
+                        <h2 class="acco-title" style="color: #c5a059; font-weight: bold; margin-bottom: 10px;">The Bar</h2>
+                        <p class="acco-subtitle" style="font-style: normal; text-transform: none; letter-spacing: 0; color: #666;">Perfectly mixed drinks in a Mewar inspired setting</p>
+                    </div>
+                </section>
+
+                <section class="bar-visual-spread">
+                    <div class="bar-photo-wrapper" style="cursor: pointer;" onclick="openLightbox('./public/dining/bar_1.png')">
+                        <img src="./public/dining/bar_1.png" alt="The Bar Interior" class="bar-visual-img">
+                    </div>
+                    <div class="bar-photo-wrapper" style="cursor: pointer;" onclick="openLightbox('./public/dining/bar_2.png')">
+                        <img src="./public/dining/bar_2.png" alt="The Bar Lakeside" class="bar-visual-img">
+                    </div>
+                </section>
+
+                <div id="bar-details" class="suite-details-spread royal-reveal-section" style="padding-top: 50px; position: relative; z-index: 1000; pointer-events: auto;">
+                    <div class="kohinoor-description">
+                        <p class="lead-text">Open from noon until midnight seven days a week, The Bar features traditional archways and domes, naturally lit during the day and glowing in the light of glass lamps after sunset.</p>
+                        <p>Here, you can relax with a fine gin, martinis, margaritas, alcoholic coffees, frozen cocktails and soft drinks, beside uninterrupted views of our lush gardens and the lake beyond. Every sip is a story of refined Udaipur hospitality.</p>
+                    </div>
+
+                    <div class="kohinoor-features">
+                        <div class="feature-item">
+                            <span class="feature-label">Phone</span>
+                            <span class="feature-value">+91 294 268 2301</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-label">Location</span>
+                            <span class="feature-value">Lake Pichola, Udaipur 313001, India</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-label">Timings</span>
+                            <span class="feature-value">12:00 pm to 12:00 am</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-label">Menus</span>
+                            <div class="feature-value" style="display: flex; flex-direction: column; gap: 12px; margin-top: 5px;">
+                                <a href="./public/dining/bar_beverage.pdf" target="_blank" class="menu-link">Beverage Menu →</a>
+                                <a href="./public/dining/bar_cocktails.pdf" target="_blank" class="menu-link">Lobby Bar Cocktails →</a>
+                                <a href="./public/dining/bar_wine.pdf" target="_blank" class="menu-link">Wine List →</a>
+                                <a href="./public/dining/bar_snacks.pdf" target="_blank" class="menu-link">Lobby Bar Snacks →</a>
+                                <a href="./public/dining/bar_tea_coffee.pdf" target="_blank" class="menu-link">Gourmet Tea & Coffee →</a>
+                                <a href="./public/dining/bar_hitea.pdf" target="_blank" class="menu-link">Hi-Tea Charlie →</a>
+                                <a href="./public/dining/bar_non_alcoholic.pdf" target="_blank" class="menu-link">Non-Alcoholic Beverages →</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <section class="royal-reveal-section" style="padding-top: 50px; padding-bottom: 20px;">
+                    <div class="acco-narrative-container" style="text-align: left; align-items: flex-start;">
+                        <h2 class="acco-title" style="color: #c5a059; font-weight: bold; margin-bottom: 10px;">The Promenade</h2>
+                        <p class="acco-subtitle" style="font-style: normal; text-transform: none; letter-spacing: 0; color: #666;">Evening drinks and handcrafted snacks with City Palace views.</p>
+                    </div>
+                </section>
+
+                <section class="acco-gallery-section" id="promenade-gallery-section" style="padding-bottom: 100px;">
+                    <div class="acco-gallery-container" style="position: relative;">
+                        <div class="gallery-nav-btn" id="prom-prev">←</div>
+                        <div class="gallery-nav-btn" id="prom-next">→</div>
+                        <div id="promenade-gallery" class="acco-gallery" style="overflow-x: auto; scroll-behavior: smooth;">
+                            <div class="acco-thumb-wrapper">
+                                <img src="./public/dining/promenade_1.png" alt="Promenade View 1" class="acco-thumb">
+                            </div>
+                            <div class="acco-thumb-wrapper">
+                                <img src="./public/dining/promenade_2.png" alt="Promenade View 2" class="acco-thumb">
+                            </div>
+                            <div class="acco-thumb-wrapper">
+                                <img src="./public/dining/promenade_3.png" alt="Promenade View 3" class="acco-thumb">
+                            </div>
+                            <div class="acco-thumb-wrapper">
+                                <img src="./public/dining/promenade_4.png" alt="Promenade View 4" class="acco-thumb">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <div id="promenade-details" class="suite-details-spread royal-reveal-section" style="padding-top: 50px; position: relative; z-index: 1000; pointer-events: auto;">
+                    <div class="kohinoor-description">
+                        <p class="lead-text">Take a stroll down to our private promenade for an aperitif or a nightcap accompanied by handcrafted snacks from our al fresco grill or tandoor oven.</p>
+                        <p>Our expert mixologists and chefs are on hand to craft the perfect beverages and accompaniments, just as you like them. Sit back and watch the sunset over Lake Pichola, knowing that there is nowhere else you need to be. And as the lights illuminate City Palace, raise a toast with the ones you love to the perfect holiday, enjoyed at your leisure.</p>
+                        <p style="font-style: italic; color: #888; font-size: 16px; margin-top: 20px;">Please note: The Promenade is for the exclusive use of our resident guests only.</p>
+                    </div>
+
+                    <div class="kohinoor-features">
+                        <div class="feature-item">
+                            <span class="feature-label">Phone</span>
+                            <span class="feature-value">+91 294 268 2301</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-label">Location</span>
+                            <span class="feature-value">Lake Pichola, Udaipur 313001, India</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-label">Timings</span>
+                            <span class="feature-value">6:00 pm to midnight</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-label">Menus</span>
+                            <div class="feature-value" style="display: flex; flex-direction: column; gap: 12px; margin-top: 5px;">
+                                <a href="./public/dining/promenade_beverage.pdf" target="_blank" class="menu-link">Beverage Menu →</a>
+                                <a href="./public/dining/promenade_cocktails.pdf" target="_blank" class="menu-link">Cocktails →</a>
+                                <a href="./public/dining/promenade_wine.pdf" target="_blank" class="menu-link">Wine List →</a>
+                                <a href="./public/dining/promenade_snacks.pdf" target="_blank" class="menu-link">Handcrafted Snacks →</a>
+                                <a href="./public/dining/promenade_tea_coffee.pdf" target="_blank" class="menu-link">Gourmet Tea & Coffee →</a>
+                                <a href="./public/dining/promenade_hitea.pdf" target="_blank" class="menu-link">Hi-Tea Charlie →</a>
+                                <a href="./public/dining/promenade_non_alcoholic.pdf" target="_blank" class="menu-link">Non-Alcoholic Beverages →</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <section id="story-experiences-signature-section" class="suite-signature-section">
+                    <div class="signature-group">
+                        <h2 id="story-experiences-signature" class="writing-sig">Experiences</h2>
+                    </div>
+                </section>
+
+                <div id="experiences-intro" class="royal-reveal-section" style="padding: 100px 5% 150px 5%; text-align: center; max-width: 1000px; margin: 0 auto;">
+                    <p class="dining-intro-text" style="opacity: 1; transform: none; font-size: 24px; line-height: 1.8; color: #444;">Our specially curated bouquet of things to do in Udaipur captures the essence of this fascinating destination. Private dining with views across Lake Pichola, to City Palace. Astrology, traditional art and henna hand painting. Daily yoga and meditation in our vast, lush gardens. We even have a collection of activities for your little ones to enjoy.</p>
+                </div>
+
+                <section class="experience-highlight-section royal-reveal-section" style="padding: 50px 5% 100px 5%; display: flex; align-items: flex-start; justify-content: space-between; gap: 5%;">
+                    <div class="experience-text-col" style="flex: 1; text-align: left; padding-top: 20px;">
+                        <h3 class="gold-title" style="font-size: 42px; margin: 0 0 30px 0; line-height: 1.2;">Dinner at the Lakeside Pavilion</h3>
+                        
+                        <div class="experience-narrative" style="font-size: 18px; line-height: 1.6; color: #555; margin-bottom: 40px;">
+                            <p>Take your time over a specially curated menu, accompanied by live traditional music and folk dance. All complemented by night time views of City Palace and Jagmandir across the lake. Made even more memorable by our sincere service.</p>
+                        </div>
+
+                        <div class="kohinoor-features" style="grid-template-columns: 1fr; gap: 20px;">
+                            <div class="feature-item">
+                                <span class="feature-label">Duration</span>
+                                <span class="feature-value">2 to 4 hours</span>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-label">Price</span>
+                                <div class="feature-value" style="display: flex; flex-direction: column; gap: 5px;">
+                                    <span>INR 50,000 per couple, includes set-up and musician.</span>
+                                    <span>INR 8,500 for every additional guest.</span>
+                                    <span style="font-size: 14px; opacity: 0.7;">*Price excludes taxes.</span>
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-label">Contact Us</span>
+                                <div class="feature-value" style="display: flex; flex-direction: column; gap: 10px; margin-top: 5px;">
+                                    <a href="mailto:Concierge.Uvud@oberoihotels.com" class="menu-link">E-mail: Concierge.Uvud@oberoihotels.com →</a>
+                                    <a href="tel:+912942433300" class="menu-link">Phone: +91 294 2433300 →</a>
+                                    <a href="tel:+912945151100" class="menu-link">Phone: +91 294 5151100 →</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="experience-visual-col" style="flex: 1.2; position: sticky; top: 100px;">
+                        <div class="experience-photo-container" style="border-radius: 40px; overflow: hidden; cursor: pointer; position: relative;">
+                            <img src="./public/dining/experience_lakeside.png" alt="Dinner at the Lakeside Pavilion" 
+                                 class="zoom-visual" 
+                                 style="width: 100%; display: block; transition: all 0.8s cubic-bezier(0.2, 1, 0.3, 1); will-change: transform;"
+                                 onclick="openLightbox('./public/dining/experience_lakeside.png')">
+                        </div>
+                    </div>
+                </section>
+
+                </style>
+
+                <section class="experience-highlight-section royal-reveal-section" style="padding: 100px 5% 100px 5%; display: flex; align-items: flex-start; justify-content: space-between; gap: 5%; flex-direction: row-reverse;">
+                    <div class="experience-text-col" style="flex: 1; text-align: right; padding-top: 20px;">
+                        <h3 class="gold-title" style="font-size: 42px; margin: 0 0 30px 0; line-height: 1.2;">Private Dinner by the Pool</h3>
+                        
+                        <div class="experience-narrative" style="font-size: 18px; line-height: 1.6; color: #555; margin-bottom: 40px;">
+                            <p>A private dining experience for between two and four guests. Specially handcrafted delicacies are served under an intricately carved dome with views across Lake Pichola to City Palace and Jagmandir. All topped off with live traditional music to make any occasion extra special.</p>
+                        </div>
+
+                        <div class="kohinoor-features" style="grid-template-columns: 1fr; gap: 20px; align-items: flex-end;">
+                            <div class="feature-item" style="text-align: right; width: 100%;">
+                                <span class="feature-label">Duration</span>
+                                <span class="feature-value">2 to 3 hours</span>
+                            </div>
+                            <div class="feature-item" style="text-align: right; width: 100%;">
+                                <span class="feature-label">Price</span>
+                                <div class="feature-value" style="display: flex; flex-direction: column; gap: 5px; align-items: flex-end;">
+                                    <span>INR 50,000 per couple, includes set-up and musician.</span>
+                                    <span>INR 8,500 for every additional guest.</span>
+                                    <span style="font-size: 14px; opacity: 0.7;">*Price excludes taxes.</span>
+                                </div>
+                            </div>
+                            <div class="feature-item" style="text-align: right; width: 100%;">
+                                <span class="feature-label">Contact Us</span>
+                                <div class="feature-value" style="display: flex; flex-direction: column; gap: 10px; margin-top: 5px; align-items: flex-end;">
+                                    <a href="mailto:Concierge.Uvud@oberoihotels.com" class="menu-link">E-mail: Concierge.Uvud@oberoihotels.com →</a>
+                                    <a href="tel:+912942433300" class="menu-link">Phone: +91 294 2433300 →</a>
+                                    <a href="tel:+912945151100" class="menu-link">Phone: +91 294 5151100 →</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="experience-visual-col" style="flex: 1.2; position: sticky; top: 100px;">
+                        <div class="experience-photo-container" style="border-radius: 40px; overflow: hidden; cursor: pointer; position: relative;">
+                            <img src="./public/dining/experience_pool.png" alt="Private Dinner by the Pool" 
+                                 class="zoom-visual" 
+                                 style="width: 100%; display: block; transition: all 0.8s cubic-bezier(0.2, 1, 0.3, 1); will-change: transform;"
+                                 onclick="openLightbox('./public/dining/experience_pool.png')">
+                        </div>
+                    </div>
+                </section>
+
+                <section class="experience-highlight-section royal-reveal-section" style="padding: 100px 5% 150px 5%; display: flex; align-items: flex-start; justify-content: space-between; gap: 5%;">
+                    <div class="experience-text-col" style="flex: 1; text-align: left; padding-top: 20px;">
+                        <h3 class="gold-title" style="font-size: 42px; margin: 0 0 30px 0; line-height: 1.2;">Cook with the Chef</h3>
+                        
+                        <div class="experience-narrative" style="font-size: 18px; line-height: 1.6; color: #555; margin-bottom: 40px;">
+                            <p>Culinary enthusiasts will enjoy a connoisseur's guide to spices and a demonstration of local Rajasthani cuisine, by one of our masterchefs. Guests are invited to participate in an interactive cooking session, or sit back and enjoy a meal of specially curated dishes from our kitchen.</p>
+                        </div>
+
+                        <div class="kohinoor-features" style="grid-template-columns: 1fr; gap: 20px;">
+                            <div class="feature-item">
+                                <span class="feature-label">Duration</span>
+                                <span class="feature-value">2 hours</span>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-label">Price</span>
+                                <div class="feature-value" style="display: flex; flex-direction: column; gap: 5px;">
+                                    <span>INR 15,000 per person.</span>
+                                    <span style="font-size: 14px; opacity: 0.7;">*Price excludes taxes.</span>
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-label">Contact Us</span>
+                                <div class="feature-value" style="display: flex; flex-direction: column; gap: 10px; margin-top: 5px;">
+                                    <a href="mailto:Concierge.Uvud@oberoihotels.com" class="menu-link">E-mail: Concierge.Uvud@oberoihotels.com →</a>
+                                    <a href="tel:+912942433300" class="menu-link">Phone: +91 294 2433300 →</a>
+                                    <a href="tel:+912945151100" class="menu-link">Phone: +91 294 5151100 →</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="experience-visual-col" style="flex: 1.2; position: sticky; top: 100px;">
+                        <div class="experience-photo-container" style="border-radius: 40px; overflow: hidden; cursor: pointer; position: relative;">
+                            <img src="./public/dining/experience_chef.png" alt="Cook with the Chef" 
+                                 class="zoom-visual" 
+                                 style="width: 100%; display: block; transition: all 0.8s cubic-bezier(0.2, 1, 0.3, 1); will-change: transform;"
+                                 onclick="openLightbox('./public/dining/experience_chef.png')">
+                        </div>
+                    </div>
+                </section>
+
+                <section class="experience-highlight-section royal-reveal-section" style="padding: 100px 5% 150px 5%; display: flex; align-items: flex-start; justify-content: space-between; gap: 5%; flex-direction: row-reverse;">
+                    <div class="experience-text-col" style="flex: 1; text-align: right; padding-top: 20px;">
+                        <h3 class="gold-title" style="font-size: 42px; margin: 0 0 30px 0; line-height: 1.2;">Miniature Painting School</h3>
+                        
+                        <div class="experience-narrative" style="font-size: 18px; line-height: 1.6; color: #555; margin-bottom: 40px;">
+                            <p>Learn about Rajasthan’s unique tradition of miniature painting from the professional artists at the Mewar School of Art. See if you can find the perfect souvenir, or try creating a piece of your own; akin to those that traditionally adorned the walls of Rajasthani palaces, forts and haveli mansions. From dramatic landscapes to events from epic tales, and more.</p>
+                            <p style="font-style: italic; font-size: 16px; margin-top: 15px; opacity: 0.8;">If you wish to be driven to the Mewar School of Arts in a luxury car, the same can be arranged and will be chargeable.</p>
+                        </div>
+
+                        <div class="kohinoor-features" style="grid-template-columns: 1fr; gap: 20px; align-items: flex-end;">
+                            <div class="feature-item" style="text-align: right; width: 100%;">
+                                <span class="feature-label">Duration</span>
+                                <span class="feature-value">2 hours</span>
+                            </div>
+                            <div class="feature-item" style="text-align: right; width: 100%;">
+                                <span class="feature-label">Price</span>
+                                <span class="feature-value">Complimentary</span>
+                            </div>
+                            <div class="feature-item" style="text-align: right; width: 100%;">
+                                <span class="feature-label">Contact Us</span>
+                                <div class="feature-value" style="display: flex; flex-direction: column; gap: 10px; margin-top: 5px; align-items: flex-end;">
+                                    <a href="mailto:Concierge.Uvud@oberoihotels.com" class="menu-link">E-mail: Concierge.Uvud@oberoihotels.com →</a>
+                                    <a href="tel:+912942433300" class="menu-link">Phone: +91 294 2433300 →</a>
+                                    <a href="tel:+912945151100" class="menu-link">Phone: +91 294 5151100 →</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="experience-visual-col" style="flex: 1.2; position: sticky; top: 100px;">
+                        <div class="experience-photo-container" style="border-radius: 40px; overflow: hidden; cursor: pointer; position: relative;">
+                            <img src="./public/dining/experience_painting.png" alt="Miniature Painting School" 
+                                 class="zoom-visual" 
+                                 style="width: 100%; display: block; transition: all 0.8s cubic-bezier(0.2, 1, 0.3, 1); will-change: transform;"
+                                 onclick="openLightbox('./public/dining/experience_painting.png')">
+                        </div>
+                    </div>
+                </section>
+
+                <section class="experience-highlight-section royal-reveal-section" style="padding: 100px 5% 150px 5%; display: flex; align-items: flex-start; justify-content: space-between; gap: 5%;">
+                    <div class="experience-text-col" style="flex: 1; text-align: left; padding-top: 20px;">
+                        <h3 class="gold-title" style="font-size: 42px; margin: 0 0 30px 0; line-height: 1.2;">Thekri Workshop</h3>
+                        
+                        <div class="experience-narrative" style="font-size: 18px; line-height: 1.6; color: #555; margin-bottom: 40px;">
+                            <p>A unique opportunity to watch master craftsmen at work as they create dazzling glass inlay designs on tiles, vases, boxes and furniture. An unmissable opportunity to pick up an authentic Rajasthani souvenir. The Thekri workshop is just 15 minutes drive from the hotel.</p>
+                            <p style="font-style: italic; font-size: 16px; margin-top: 15px; opacity: 0.8;">If you wish to be driven to the Thekri Workshop in a luxury car, the same can be arranged and will be chargeable. Arworks as priced.</p>
+                        </div>
+
+                        <div class="kohinoor-features" style="grid-template-columns: 1fr; gap: 20px;">
+                            <div class="feature-item">
+                                <span class="feature-label">Duration</span>
+                                <span class="feature-value">2 hours</span>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-label">Price</span>
+                                <span class="feature-value">Complimentary</span>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-label">Contact Us</span>
+                                <div class="feature-value" style="display: flex; flex-direction: column; gap: 10px; margin-top: 5px;">
+                                    <a href="mailto:Concierge.Uvud@oberoihotels.com" class="menu-link">E-mail: Concierge.Uvud@oberoihotels.com →</a>
+                                    <a href="tel:+912942433300" class="menu-link">Phone: +91 294 2433300 →</a>
+                                    <a href="tel:+912945151100" class="menu-link">Phone: +91 294 5151100 →</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="experience-visual-col" style="flex: 1.2; position: sticky; top: 100px;">
+                        <div class="experience-photo-container" style="border-radius: 40px; overflow: hidden; cursor: pointer; position: relative;">
+                            <img src="./public/dining/experience_thekri.png" alt="Thekri Workshop" 
+                                 class="zoom-visual" 
+                                 style="width: 100%; display: block; transition: all 0.8s cubic-bezier(0.2, 1, 0.3, 1); will-change: transform;"
+                                 onclick="openLightbox('./public/dining/experience_thekri.png')">
+                        </div>
+                    </div>
+                </section>
+
+                <section class="experience-highlight-section royal-reveal-section" style="padding: 100px 5% 150px 5%; display: flex; align-items: flex-start; justify-content: space-between; gap: 5%; flex-direction: row-reverse;">
+                    <div class="experience-text-col" style="flex: 1; text-align: right; padding-top: 20px;">
+                        <h3 class="gold-title" style="font-size: 42px; margin: 0 0 30px 0; line-height: 1.2;">Astrology</h3>
+                        
+                        <div class="experience-narrative" style="font-size: 18px; line-height: 1.6; color: #555; margin-bottom: 40px;">
+                            <p>The ancient science of astrology uses precise mathematical tools to map the alignment of the planets at the time and place of your birth; Our professional astrologer helps in revealing the hidden secrets of your personality and what the future has in store.</p>
+                        </div>
+
+                        <div class="kohinoor-features" style="grid-template-columns: 1fr; gap: 20px; align-items: flex-end;">
+                            <div class="feature-item" style="text-align: right; width: 100%;">
+                                <span class="feature-label">Duration</span>
+                                <span class="feature-value">1 hour</span>
+                            </div>
+                            <div class="feature-item" style="text-align: right; width: 100%;">
+                                <span class="feature-label">Price</span>
+                                <div class="feature-value" style="display: flex; flex-direction: column; gap: 5px; align-items: flex-end;">
+                                    <span>INR 3,000 per person</span>
+                                    <span style="font-size: 14px; opacity: 0.7;">*Price excludes taxes.</span>
+                                </div>
+                            </div>
+                            <div class="feature-item" style="text-align: right; width: 100%;">
+                                <span class="feature-label">Contact Us</span>
+                                <div class="feature-value" style="display: flex; flex-direction: column; gap: 10px; margin-top: 5px; align-items: flex-end;">
+                                    <a href="mailto:Concierge.Uvud@oberoihotels.com" class="menu-link">E-mail: Concierge.Uvud@oberoihotels.com →</a>
+                                    <a href="tel:+912942433300" class="menu-link">Phone: +91 294 2433300 →</a>
+                                    <a href="tel:+912945151100" class="menu-link">Phone: +91 294 5151100 →</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="experience-visual-col" style="flex: 1.2; position: sticky; top: 100px;">
+                        <div class="experience-photo-container" style="border-radius: 40px; overflow: hidden; cursor: pointer; position: relative;">
+                            <img src="./public/dining/experience_astrology.png" alt="Astrology" 
+                                 class="zoom-visual" 
+                                 style="width: 100%; display: block; transition: all 0.8s cubic-bezier(0.2, 1, 0.3, 1); will-change: transform;"
+                                 onclick="openLightbox('./public/dining/experience_astrology.png')">
+                        </div>
+                    </div>
+                </section>
+
+                <section class="experience-highlight-section royal-reveal-section" style="padding: 100px 5% 150px 5%; display: flex; align-items: flex-start; justify-content: space-between; gap: 5%;">
+                    <div class="experience-text-col" style="flex: 1; text-align: left; padding-top: 20px;">
+                        <h3 class="gold-title" style="font-size: 42px; margin: 0 0 30px 0; line-height: 1.2;">Children's Activity</h3>
+                        
+                        <div class="experience-narrative" style="font-size: 18px; line-height: 1.6; color: #555; margin-bottom: 40px;">
+                            <p>While you enjoy your holiday at our resort, we ensure that your children have a fun time too. Our children's activities include:</p>
+                        </div>
+
+                        <div class="activity-list" style="display: flex; flex-direction: column; gap: 40px; margin-bottom: 50px;">
+                            <div class="activity-item">
+                                <h4 style="color: #c5a059; font-size: 20px; margin: 0 0 10px 0;">Abracadabra</h4>
+                                <p style="font-size: 16px; color: #666; margin: 0 0 10px 0;">1 hour. INR 3,500.</p>
+                                <p style="font-size: 16px; color: #888;">An opportunity for children to learn dazzling magic skills from a local magician in a private session.</p>
+                            </div>
+
+                            <div class="activity-item">
+                                <h4 style="color: #c5a059; font-size: 20px; margin: 0 0 10px 0;">Block Printing</h4>
+                                <p style="font-size: 16px; color: #666; margin: 0 0 10px 0;">1 hour. INR 5,500 for upto 4 guests.</p>
+                                <p style="font-size: 16px; color: #888;">Using wooden blocks hand carved to resemble animals, flowers and traditional Rajasthani patterns, children can decorate their own fabric under professional guidance.</p>
+                            </div>
+
+                            <div class="activity-item">
+                                <h4 style="color: #c5a059; font-size: 20px; margin: 0 0 10px 0;">Junior Chef</h4>
+                                <p style="font-size: 16px; color: #666; margin: 0 0 10px 0; color: #b00;">Activity is discontinued.</p>
+                                <p style="font-size: 16px; color: #888;">A fun, hands on cookie making session under the watchful guidance of our friendly chefs.</p>
+                            </div>
+
+                            <div class="activity-item">
+                                <h4 style="color: #c5a059; font-size: 20px; margin: 0 0 10px 0;">Play with Clay</h4>
+                                <p style="font-size: 16px; color: #666; margin: 0 0 10px 0;">1 hour. INR 3,000 for two guests.</p>
+                                <p style="font-size: 16px; color: #888;">A rural artisan will help unlock the creative skills needed to craft an original artwork out of natural clay in a private session.</p>
+                            </div>
+
+                            <div class="activity-item">
+                                <h4 style="color: #c5a059; font-size: 20px; margin: 0 0 10px 0;">Puppet Show</h4>
+                                <p style="font-size: 16px; color: #666; margin: 0 0 10px 0;">1 hour. INR 3,500 for two guests.</p>
+                                <p style="font-size: 16px; color: #888;">Puppetry is an ancient form of storytelling. Colourful, animated folk storytelling comes to life at the hands of local marionetteers in our beautiful gardens.</p>
+                            </div>
+
+                            <div class="activity-item">
+                                <h4 style="color: #c5a059; font-size: 20px; margin: 0 0 10px 0;">Treasure Hunt</h4>
+                                <p style="font-size: 16px; color: #666; margin: 0 0 10px 0;">1 hour. INR 1,000 per child.</p>
+                                <p style="font-size: 16px; color: #888;">Let your children loose in our gardens on an intrepid hunt for clues that will lead them to a hidden treasure.</p>
+                            </div>
+                        </div>
+
+                        <div class="kohinoor-features" style="grid-template-columns: 1fr; gap: 20px; border-top: 1px solid #eee; padding-top: 30px;">
+                            <div class="feature-item">
+                                <span class="feature-label">Contact Us</span>
+                                <div class="feature-value" style="display: flex; flex-direction: column; gap: 10px; margin-top: 5px;">
+                                    <a href="mailto:Concierge.Uvud@oberoihotels.com" class="menu-link">E-mail: Concierge.Uvud@oberoihotels.com →</a>
+                                    <a href="tel:+912942433300" class="menu-link">Phone: +91 294 2433300 →</a>
+                                    <a href="tel:+912945151100" class="menu-link">Phone: +91 294 5151100 →</a>
+                                </div>
+                            </div>
+                            <p style="font-size: 14px; opacity: 0.7; margin-top: 10px;">*Price excludes taxes.</p>
+                        </div>
+                    </div>
+                    <div class="experience-visual-col" style="flex: 1.2; position: sticky; top: 100px;">
+                        <div class="experience-photo-container" style="border-radius: 40px; overflow: hidden; cursor: pointer; position: relative;">
+                            <img src="./public/dining/experience_children.png" alt="Children's Activity" 
+                                 class="zoom-visual" 
+                                 style="width: 100%; display: block; transition: all 0.8s cubic-bezier(0.2, 1, 0.3, 1); will-change: transform;"
+                                 onclick="openLightbox('./public/dining/experience_children.png')">
+                        </div>
+                    </div>
+                </section>
+
+                <section class="experience-highlight-section royal-reveal-section" style="padding: 100px 5% 150px 5%; display: flex; align-items: flex-start; justify-content: space-between; gap: 5%; flex-direction: row-reverse;">
+                    <div class="experience-text-col" style="flex: 1; text-align: right; padding-top: 20px;">
+                        <h3 class="gold-title" style="font-size: 42px; margin: 0 0 30px 0; line-height: 1.2;">Henna Painting</h3>
+                        
+                        <div class="experience-narrative" style="font-size: 18px; line-height: 1.6; color: #555; margin-bottom: 40px;">
+                            <p>Sit back, relax and prepare to be amazed as a skilled mehendi artist deftly embellishes your hands or feet with intricate patterns using natural inks. Henna, a non-allergenic natural dye, that will wash off after approximately two weeks. If your skin is particularly sensitive, please consult our concierge before booking this experience.</p>
+                        </div>
+
+                        <div class="kohinoor-features" style="grid-template-columns: 1fr; gap: 20px; align-items: flex-end;">
+                            <div class="feature-item" style="text-align: right; width: 100%;">
+                                <span class="feature-label">Duration</span>
+                                <span class="feature-value">30 minutes for one hand</span>
+                            </div>
+                            <div class="feature-item" style="text-align: right; width: 100%;">
+                                <span class="feature-label">Price</span>
+                                <div class="feature-value" style="display: flex; flex-direction: column; gap: 5px; align-items: flex-end;">
+                                    <span>INR 1,700 per hand</span>
+                                    <span style="font-size: 14px; opacity: 0.7;">*Price excludes taxes.</span>
+                                </div>
+                            </div>
+                            <div class="feature-item" style="text-align: right; width: 100%;">
+                                <span class="feature-label">Contact Us</span>
+                                <div class="feature-value" style="display: flex; flex-direction: column; gap: 10px; margin-top: 5px; align-items: flex-end;">
+                                    <a href="mailto:Concierge.Uvud@oberoihotels.com" class="menu-link">E-mail: Concierge.Uvud@oberoihotels.com →</a>
+                                    <a href="tel:+912942433300" class="menu-link">Phone: +91 294 2433300 →</a>
+                                    <a href="tel:+912945151100" class="menu-link">Phone: +91 294 5151100 →</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="experience-visual-col" style="flex: 1.2; position: sticky; top: 100px;">
+                        <div class="experience-photo-container" style="border-radius: 40px; overflow: hidden; cursor: pointer; position: relative;">
+                            <img src="./public/dining/experience_henna.png" alt="Henna Painting" 
+                                 class="zoom-visual" 
+                                 style="width: 100%; display: block; transition: all 0.8s cubic-bezier(0.2, 1, 0.3, 1); will-change: transform;"
+                                 onclick="openLightbox('./public/dining/experience_henna.png')">
+                        </div>
+                    </div>
+                </section>
+
+                <section class="experience-highlight-section royal-reveal-section" style="padding: 100px 5% 150px 5%; display: flex; align-items: flex-start; justify-content: space-between; gap: 5%;">
+                    <div class="experience-text-col" style="flex: 1; text-align: left; padding-top: 20px;">
+                        <h3 class="gold-title" style="font-size: 42px; margin: 0 0 30px 0; line-height: 1.2;">Play with Clay</h3>
+                        
+                        <div class="experience-narrative" style="font-size: 18px; line-height: 1.6; color: #555; margin-bottom: 40px;">
+                            <p>Guests can get their hands dirty in a fun, creative pottery making session with a rural artisan. Guests will learn how to mould and shape natural clay into a bespoke design, using a traditional potters’ wheel.</p>
+                            <p style="font-style: italic; font-size: 16px; margin-top: 15px; opacity: 0.8;">Note: Designs are left all day and overnight and the same can be collected the following day.</p>
+                        </div>
+
+                        <div class="kohinoor-features" style="grid-template-columns: 1fr; gap: 20px;">
+                            <div class="feature-item">
+                                <span class="feature-label">Duration</span>
+                                <span class="feature-value">60 minutes</span>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-label">Price</span>
+                                <div class="feature-value" style="display: flex; flex-direction: column; gap: 5px;">
+                                    <span>INR 3,500 for upto 4 guests</span>
+                                    <span style="font-size: 14px; opacity: 0.7;">*Price excludes taxes.</span>
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-label">Contact Us</span>
+                                <div class="feature-value" style="display: flex; flex-direction: column; gap: 10px; margin-top: 5px;">
+                                    <a href="mailto:Concierge.Uvud@oberoihotels.com" class="menu-link">E-mail: Concierge.Uvud@oberoihotels.com →</a>
+                                    <a href="tel:+912942433300" class="menu-link">Phone: +91 294 2433300 →</a>
+                                    <a href="tel:+912945151100" class="menu-link">Phone: +91 294 5151100 →</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="experience-visual-col" style="flex: 1.2; position: sticky; top: 100px;">
+                        <div class="experience-photo-container" style="border-radius: 40px; overflow: hidden; cursor: pointer; position: relative;">
+                            <img src="./public/dining/experience_clay.png" alt="Play with Clay" 
+                                 class="zoom-visual" 
+                                 style="width: 100%; display: block; transition: all 0.8s cubic-bezier(0.2, 1, 0.3, 1); will-change: transform;"
+                                 onclick="openLightbox('./public/dining/experience_clay.png')">
+                        </div>
+                    </div>
+                </section>
+
+                <section class="experience-highlight-section royal-reveal-section" style="padding: 100px 5% 150px 5%; display: flex; align-items: flex-start; justify-content: space-between; gap: 5%; flex-direction: row-reverse;">
+                    <div class="experience-text-col" style="flex: 1; text-align: right; padding-top: 20px;">
+                        <h3 class="gold-title" style="font-size: 42px; margin: 0 0 30px 0; line-height: 1.2;">Off the Track</h3>
+                        
+                        <div class="experience-narrative" style="font-size: 18px; line-height: 1.6; color: #555; margin-bottom: 40px;">
+                            <p>A bicycle ride around the world begins with a single pedal stroke. As they say, you never forget how to ride a bike. Let’s find out. Guest are invited to enjoy bicycling in our premises.</p>
+                        </div>
+
+                        <div class="kohinoor-features" style="grid-template-columns: 1fr; gap: 20px; align-items: flex-end;">
+                            <div class="feature-item" style="text-align: right; width: 100%;">
+                                <span class="feature-label">Duration</span>
+                                <span class="feature-value">6 hours</span>
+                            </div>
+                            <div class="feature-item" style="text-align: right; width: 100%;">
+                                <span class="feature-label">Price</span>
+                                <div class="feature-value" style="display: flex; flex-direction: column; gap: 5px; align-items: flex-end;">
+                                    <span>INR 950 all inclusive of taxes per cycle</span>
+                                </div>
+                            </div>
+                            <div class="feature-item" style="text-align: right; width: 100%;">
+                                <span class="feature-label">Contact Us</span>
+                                <div class="feature-value" style="display: flex; flex-direction: column; gap: 10px; margin-top: 5px; align-items: flex-end;">
+                                    <a href="mailto:Concierge.Uvud@oberoihotels.com" class="menu-link">E-mail: Concierge.Uvud@oberoihotels.com →</a>
+                                    <a href="tel:+912942433300" class="menu-link">Phone: +91 294 2433300 →</a>
+                                    <a href="tel:+912945151100" class="menu-link">Phone: +91 294 5151100 →</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="experience-visual-col" style="flex: 1.2; position: sticky; top: 100px;">
+                        <div class="experience-photo-container" style="border-radius: 40px; overflow: hidden; cursor: pointer; position: relative;">
+                            <img src="./public/dining/experience_offtrack.png" alt="Off the Track" 
+                                 class="zoom-visual" 
+                                 style="width: 100%; display: block; transition: all 0.8s cubic-bezier(0.2, 1, 0.3, 1); will-change: transform;"
+                                 onclick="openLightbox('./public/dining/experience_offtrack.png')">
+                        </div>
+                    </div>
+                </section>
+
+                <section id="story-wellness-section" class="experience-highlight-section royal-reveal-section" style="padding: 100px 5% 150px 5%; display: flex; align-items: flex-start; justify-content: space-between; gap: 5%;">
+                    <div class="experience-text-col" style="flex: 1; text-align: left; padding-top: 20px;">
+                        <h3 class="gold-title" style="font-size: 42px; margin: 0 0 30px 0; line-height: 1.2;">Spa Sojourn at The Oberoi Udaivilas</h3>
+                        
+                        <div class="experience-narrative" style="font-size: 18px; line-height: 1.6; color: #555; margin-bottom: 40px;">
+                            <p>Our private yoga sessions can be tailored to suit any age and level of experience. According to individual needs, our instructors teach breathing and meditation techniques, yoga postures and Sanskrit mantras to rejuvenate the body and mind.</p>
+                        </div>
+
+                        <div class="kohinoor-features" style="grid-template-columns: 1fr; gap: 20px;">
+                            <div class="feature-item">
+                                <span class="feature-label">Duration</span>
+                                <span class="feature-value">1 hour</span>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-label">Price</span>
+                                <div class="feature-value" style="display: flex; flex-direction: column; gap: 5px;">
+                                    <span>INR 3,000 per person</span>
+                                    <span style="font-size: 14px; opacity: 0.7;">*Price excludes taxes.</span>
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-label">Contact Us</span>
+                                <div class="feature-value" style="display: flex; flex-direction: column; gap: 10px; margin-top: 5px;">
+                                    <a href="mailto:Concierge.Uvud@oberoihotels.com" class="menu-link">E-mail: Concierge.Uvud@oberoihotels.com →</a>
+                                    <a href="tel:+912942433300" class="menu-link">Phone: +91 294 2433300 →</a>
+                                    <a href="tel:+912945151100" class="menu-link">Phone: +91 294 5151100 →</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="experience-visual-col" style="flex: 1.2; position: sticky; top: 100px;">
+                        <div class="experience-photo-container" style="border-radius: 40px; overflow: hidden; cursor: pointer; position: relative;">
+                            <img src="./public/dining/experience_spa.png" alt="Spa Sojourn" 
+                                 class="zoom-visual" 
+                                 style="width: 100%; display: block; transition: all 0.8s cubic-bezier(0.2, 1, 0.3, 1); will-change: transform;"
+                                 onclick="openLightbox('./public/dining/experience_spa.png')">
+                        </div>
+                    </div>
+                </section>
+
+                <section class="experience-highlight-section royal-reveal-section" style="padding: 100px 5% 150px 5%; display: flex; align-items: flex-start; justify-content: space-between; gap: 5%; flex-direction: row-reverse;">
+                    <div class="experience-text-col" style="flex: 1; text-align: right; padding-top: 20px;">
+                        <h3 class="gold-title" style="font-size: 42px; margin: 0 0 30px 0; line-height: 1.2;">Heritage Walk</h3>
+                        
+                        <div class="experience-narrative" style="font-size: 18px; line-height: 1.6; color: #555; margin-bottom: 40px;">
+                            <p>This tour starts with a private boat ride across the lake to a traditional ghat near the old city. From there, a professional guide will walk you through Udaipur’s lesser visited narrow lanes, past 'haveli' mansions and shrines, revealing stories of folk deities and fabled heroes along the way. As the tour involves an extensive walk through the old city, guests are advised to wear comfortable footwear to have a memorable experience.</p>
+                        </div>
+
+                        <div class="kohinoor-features" style="grid-template-columns: 1fr; gap: 20px; align-items: flex-end;">
+                            <div class="feature-item" style="text-align: right; width: 100%;">
+                                <span class="feature-label">Duration</span>
+                                <span class="feature-value">2 hours</span>
+                            </div>
+                            <div class="feature-item" style="text-align: right; width: 100%;">
+                                <span class="feature-label">Price</span>
+                                <div class="feature-value" style="display: flex; flex-direction: column; gap: 5px; align-items: flex-end;">
+                                    <span>INR 4,000 per couple</span>
+                                    <span style="font-size: 14px; opacity: 0.7;">*Price excludes taxes.</span>
+                                </div>
+                            </div>
+                            <div class="feature-item" style="text-align: right; width: 100%;">
+                                <span class="feature-label">Contact Us</span>
+                                <div class="feature-value" style="display: flex; flex-direction: column; gap: 10px; margin-top: 5px; align-items: flex-end;">
+                                    <a href="mailto:Concierge.Uvud@oberoihotels.com" class="menu-link">E-mail: Concierge.Uvud@oberoihotels.com →</a>
+                                    <a href="tel:+912942433300" class="menu-link">Phone: +91 294 243 3300 →</a>
+                                    <a href="tel:+912945151100" class="menu-link">Phone: +91 294 515 1100 →</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="experience-visual-col" style="flex: 1.2; position: sticky; top: 100px;">
+                        <div class="experience-photo-container" style="border-radius: 40px; overflow: hidden; cursor: pointer; position: relative;">
+                            <img src="./public/dining/experience_heritage.png" alt="Heritage Walk" 
+                                 class="zoom-visual" 
+                                 style="width: 100%; display: block; transition: all 0.8s cubic-bezier(0.2, 1, 0.3, 1); will-change: transform;"
+                                 onclick="openLightbox('./public/dining/experience_heritage.png')">
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+                <section id="story-attractions-signature-section" class="suite-signature-section">
+                    <div class="signature-group">
+                        <h2 id="story-attractions-signature" class="writing-sig">Attractions</h2>
+                    </div>
+                </section>
+
+                <section id="city-palace-attraction" class="experience-highlight-section royal-reveal-section" style="padding: 100px 5% 150px 5%; display: flex; align-items: flex-start; justify-content: space-between; gap: 5%;">
+                    <div class="experience-text-col" style="flex: 1; text-align: left; padding-top: 20px;">
+                        <h3 class="gold-title" style="font-size: 42px; margin: 0 0 30px 0; line-height: 1.2;">City Palace</h3>
+                        
+                        <div class="experience-narrative" style="font-size: 18px; line-height: 1.6; color: #555; margin-bottom: 40px;">
+                            <p>Begun in the 16th century and completed over the course of 300 years, City Palace in Udaipur is actually several palaces laid out in such a way that they appear as a single façade. Fusing traditional Rajasthani and Mughal styles, City Palace has ornate glass and ceramic mosaics, elaborate gateways, courtyards, corridors and garden oases.</p>
+                        </div>
+                
+                        <div class="kohinoor-features" style="grid-template-columns: 1fr; gap: 20px;">
+                            <div class="feature-item">
+                                <span class="feature-label">Distance from the Hotel</span>
+                                <span class="feature-value">2.8 kilometres</span>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-label">Travel Time</span>
+                                <span class="feature-value">13 minutes</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="experience-visual-col" style="flex: 1.2; position: sticky; top: 100px;">
+                        <div class="experience-photo-container" style="border-radius: 40px; overflow: hidden; cursor: pointer; position: relative; box-shadow: 0 30px 60px rgba(0,0,0,0.15);">
+                            <img src="public/attractions/city_palace.png" alt="City Palace" 
+                                 class="zoom-visual" 
+                                 style="width: 100%; display: block; transition: all 0.8s cubic-bezier(0.2, 1, 0.3, 1); will-change: transform;"
+                                 onclick="openLightbox('public/attractions/city_palace.png')">
+                        </div>
+                    </div>
+                </section>
+
+                <section id="nathdwara-attraction" class="experience-highlight-section royal-reveal-section" style="padding: 100px 5% 150px 5%; display: flex; align-items: flex-start; justify-content: space-between; gap: 5%; flex-direction: row-reverse;">
+                    <div class="experience-text-col" style="flex: 1; text-align: right; padding-top: 20px;">
+                        <h3 class="gold-title" style="font-size: 42px; margin: 0 0 30px 0; line-height: 1.2;">Nathdwara</h3>
+                        
+                        <div class="experience-narrative" style="font-size: 18px; line-height: 1.6; color: #555; margin-bottom: 40px;">
+                            <p>Located on the banks of the River Banas in the Aravalli foothills, Nathdwara literally means: Gateway to Shrinathji; Shrinathji being a 14th century child deity and avatar of Lord Krishna, in whose honour a large temple was built here. Nathdwara is also known for its pichhwai: large handpainted cloths that depict scenes from the life of Lord Krishna, as well as handmade ceramics, milk based sweets and haweli devotional music.</p>
+                        </div>
+                
+                        <div class="kohinoor-features" style="grid-template-columns: 1fr; gap: 20px; align-items: flex-end;">
+                            <div class="feature-item" style="text-align: right; width: 100%;">
+                                <span class="feature-label">Distance from the Hotel</span>
+                                <span class="feature-value">50 kilometres</span>
+                            </div>
+                            <div class="feature-item" style="text-align: right; width: 100%;">
+                                <span class="feature-label">Travel Time</span>
+                                <span class="feature-value">1 hour 8 minutes</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="experience-visual-col" style="flex: 1.2; position: sticky; top: 100px;">
+                        <div class="experience-photo-container" style="border-radius: 40px; overflow: hidden; cursor: pointer; position: relative; box-shadow: 0 30px 60px rgba(0,0,0,0.15);">
+                            <img src="public/attractions/nathdwara.png" alt="Nathdwara" 
+                                 class="zoom-visual" 
+                                 style="width: 100%; display: block; transition: all 0.8s cubic-bezier(0.2, 1, 0.3, 1); will-change: transform;"
+                                 onclick="openLightbox('public/attractions/nathdwara.png')">
+                        </div>
+                    </div>
+                </section>
+
+                <section id="sajjangarh-attraction" class="experience-highlight-section royal-reveal-section" style="padding: 100px 5% 150px 5%; display: flex; align-items: flex-start; justify-content: space-between; gap: 5%;">
+                    <div class="experience-text-col" style="flex: 1; text-align: left; padding-top: 20px;">
+                        <h3 class="gold-title" style="font-size: 42px; margin: 0 0 30px 0; line-height: 1.2;">Sajjangarh Monsoon Palace</h3>
+                        
+                        <div class="experience-narrative" style="font-size: 18px; line-height: 1.6; color: #555; margin-bottom: 40px;">
+                            <p>A visit to this celebrated landmark is highly recommended. Originally built in the late 18th Century by Maharana Sajjan to serve as an observatory, the Mahrana chose his perch well. From here you can enjoy a breathtaking view of the city and surrounding lakes, the rivers and wooded hillsides. Watching the sunset from here is especially rewarding.</p>
+                        </div>
+                
+                        <div class="kohinoor-features" style="grid-template-columns: 1fr; gap: 20px;">
+                            <div class="feature-item">
+                                <span class="feature-label">Distance from the Hotel</span>
+                                <span class="feature-value">7 kilometres</span>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-label">Travel Time</span>
+                                <span class="feature-value">19 minutes</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="experience-visual-col" style="flex: 1.2; position: sticky; top: 100px;">
+                        <div class="experience-photo-container" style="border-radius: 40px; overflow: hidden; cursor: pointer; position: relative; box-shadow: 0 30px 60px rgba(0,0,0,0.15);">
+                            <img src="public/attractions/sajjangarh.png" alt="Sajjangarh Monsoon Palace" 
+                                 class="zoom-visual" 
+                                 style="width: 100%; display: block; transition: all 0.8s cubic-bezier(0.2, 1, 0.3, 1); will-change: transform;"
+                                 onclick="openLightbox('public/attractions/sajjangarh.png')">
+                        </div>
+                    </div>
+                </section>
+
+                <section id="bahubali-attraction" class="experience-highlight-section royal-reveal-section" style="padding: 100px 5% 150px 5%; display: flex; align-items: flex-start; justify-content: space-between; gap: 5%; flex-direction: row-reverse;">
+                    <div class="experience-text-col" style="flex: 1; text-align: right; padding-top: 20px;">
+                        <h3 class="gold-title" style="font-size: 42px; margin: 0 0 30px 0; line-height: 1.2;">Bahubali Hills</h3>
+                        
+                        <div class="experience-narrative" style="font-size: 18px; line-height: 1.6; color: #555; margin-bottom: 40px;">
+                            <p>One of the most scenic hills located on the outskirts of Udaipur near Badi Lake. Surrounded by small hills, you can easily hike to have this scenic view of the Bahubali Hills. A great place for nature and adventure lovers.</p>
+                            <p style="margin-top: 20px;">It is located on Badi Lake, about 13 km from Udaipur. You can witness an incredible sunrise and sunset from the hill. Bahubali Hill is a great place for photographers and selfie enthusiasts. It is a pretty photogenic place, and you can get a lot of great photos there.</p>
+                            <p style="margin-top: 20px;">The lake is not as popular as its famous counterparts like Lake Pichola or Lake Fateh Sagar, but it is slowly catching people's attention, as is the hidden natural beauty.</p>
+                        </div>
+                    </div>
+                    <div class="experience-visual-col" style="flex: 1.2; position: sticky; top: 100px;">
+                        <div class="experience-photo-container" style="border-radius: 40px; overflow: hidden; cursor: pointer; position: relative; box-shadow: 0 30px 60px rgba(0,0,0,0.15);">
+                            <img src="public/attractions/bahubali_hills.webp" alt="Bahubali Hills" 
+                                 class="zoom-visual" 
+                                 style="width: 100%; display: block; transition: all 0.8s cubic-bezier(0.2, 1, 0.3, 1); will-change: transform;"
+                                 onclick="openLightbox('public/attractions/bahubali_hills.webp')">
+                        </div>
+                    </div>
+                </section>
+
+                <footer id="luxury-footer">
+                    <div class="footer-bg"></div>
+                    <div class="footer-overlay"></div>
+                    <div class="footer-content">
+                        <div class="footer-brand">
+                            <h2 class="footer-sig">The Oberoi Udaivilas</h2>
+                            <p class="footer-tagline">Udaipur, India</p>
+                        </div>
+                        <div class="footer-divider"></div>
+                        <div class="footer-info">
+                            <p class="designed-by">Designed by <span>Somya Bhalani</span></p>
+                            <p class="copyright">&copy; 2026 All Rights Reserved</p>
+                        </div>
+                    </div>
+                </footer>
+
+                <!-- Lightbox Modal -->
+            <div id="lightbox-modal">
+                <span id="close-lightbox">&times;</span>
+                <img id="lightbox-img" src="" alt="">
+            </div>
+            <div class="scroll-spacer-acco"></div>
+        </section>
+    </main>
+
+    <script src="main.js"></script>
+</body>
+</html>
