@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
     canvas.height = window.innerHeight;
 
     const frameCount = 60;
-    const currentFrame = index => `public/frames/frame_${index}.png`;
+    const currentFrame = index => `public/frames/frame_${index}.webp`;
 
     const images = [];
     const airship = { frame: 0 };
