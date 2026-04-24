@@ -855,3 +855,146 @@ body {
     opacity: 0.6;
 }
 
+/* Mobile Responsiveness & Fluidity */
+@media (max-width: 768px) {
+    /* Logo & Brand Identity */
+    #logo-container {
+        top: 20px;
+        left: 20px;
+        transform: scale(0.75);
+        transform-origin: top left;
+    }
+
+    /* Bottom Liquid Navbar for Mobile Reachability */
+    #luxury-navbar {
+        top: auto;
+        bottom: 25px;
+        right: 20px;
+        left: 20px;
+        padding: 12px 25px;
+        border-radius: 40px;
+        transform: translateY(0);
+        opacity: 1 !important; /* Always show on mobile if triggered */
+    }
+
+    .nav-links {
+        gap: 10px;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .nav-links a {
+        font-size: 8px;
+        letter-spacing: 1px;
+    }
+
+    #book-now-btn {
+        display: none; /* Streamline for mobile journey */
+    }
+
+    /* Section Spacing & Layout */
+    .experience-highlight-section {
+        flex-direction: column !important;
+        padding: 60px 25px !important;
+        gap: 40px !important;
+    }
+
+    /* Mirrored sections stack normally on mobile */
+    section[style*="flex-direction: row-reverse"] {
+        flex-direction: column !important;
+    }
+
+    .experience-text-col, .experience-visual-col {
+        width: 100% !important;
+        text-align: left !important;
+        position: relative !important;
+        top: 0 !important;
+    }
+
+    /* Signatures & Typography */
+    .writing-sig {
+        font-size: 50px !important;
+    }
+
+    #story-suites-signature, .luxury-suite-sig-2 {
+        margin-top: -20px;
+        margin-left: 20px;
+    }
+
+    .gold-title {
+        font-size: 32px !important;
+        line-height: 1.1;
+    }
+
+    .experience-narrative p {
+        font-size: 16px !important;
+    }
+
+    /* Feature Lists Stacking */
+    .kohinoor-features {
+        padding-left: 0 !important;
+        border-left: none !important;
+        border-top: 1px solid rgba(0,0,0,0.05);
+        padding-top: 30px;
+    }
+
+    .kohinoor-features[style*="align-items: flex-end"] {
+        align-items: flex-start !important;
+        text-align: left !important;
+    }
+
+    .feature-item[style*="text-align: right"] {
+        text-align: left !important;
+    }
+
+    /* Galleries & Visuals */
+    .acco-thumb-wrapper {
+        width: 85vw !important;
+        min-width: 85vw !important;
+        height: 320px;
+    }
+
+    #promenade-gallery .acco-thumb-wrapper {
+        width: 85vw !important;
+        flex: 0 0 85vw !important;
+    }
+
+    .gallery-nav-btn {
+        width: 45px;
+        height: 45px;
+        font-size: 16px;
+    }
+
+    /* Grid Stacking */
+    .suite-details-spread, .v2-specs-grid, .amenities-grid {
+        grid-template-columns: 1fr !important;
+        gap: 30px !important;
+    }
+
+    .v2-specs-grid {
+        grid-template-columns: 1fr 1fr !important; /* 2 columns for specs to save space */
+    }
+
+    .bar-visual-spread {
+        flex-direction: column;
+        padding: 0 25px 60px 25px;
+    }
+
+    .bar-photo-wrapper {
+        height: 35vh;
+    }
+
+    /* Footer */
+    #luxury-footer {
+        height: 60vh;
+    }
+
+    .footer-sig {
+        font-size: 45px !important;
+    }
+
+    .designed-by {
+        font-size: 18px;
+    }
+}
+
