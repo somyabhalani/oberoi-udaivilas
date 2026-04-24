@@ -59,12 +59,53 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const images = [];
     const airship = { frame: 0 };
+    let loadedCount = 0;
 
-    // Preload images
-    for (let i = 0; i < frameCount; i++) {
-        const img = new Image();
-        img.src = currentFrame(i);
-        images.push(img);
+    // Loader Elements
+    const progressBar = document.getElementById("progress-bar");
+    const progressText = document.getElementById("progress-text");
+    const loaderLogo = document.getElementById("loader-logo-wrapper");
+    const progressContainer = document.getElementById("progress-container");
+
+    // Initial Loader Entrance
+    gsap.set("#logo-container", { opacity: 0 }); // Hide main logo initially
+    
+    let writingFinished = false;
+
+    const tlLoader = gsap.timeline({
+        onComplete: () => {
+            writingFinished = true;
+            checkAllLoaded();
+        }
+    });
+
+    tlLoader.to(loaderLogo, { opacity: 1, y: 0, duration: 1.5, ease: "power3.out" })
+            .to(".loader-sig", { 
+                clipPath: "inset(0 0% 0 0)", 
+                duration: 3, 
+                ease: "power2.inOut" 
+            }, "-=0.5")
+            .to(progressContainer, { 
+                opacity: 1, 
+                width: 250, 
+                duration: 2, 
+                ease: "expo.inOut" 
+            }, "-=1.5");
+
+    function checkAllLoaded() {
+        if (loadedCount === frameCount && writingFinished) {
+            setTimeout(startIntroTimeline, 800);
+        }
+    }
+
+    function updateProgress() {
+        loadedCount++;
+        const progress = Math.round((loadedCount / frameCount) * 100);
+        if (progressBar) progressBar.style.width = `${progress}%`;
+
+        if (loadedCount === frameCount) {
+            checkAllLoaded();
+        }
     }
 
     function render() {
@@ -74,74 +115,70 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    // Initial render once first image loads
-    images[0].onload = () => render();
+    // Preload images with real tracking
+    for (let i = 0; i < frameCount; i++) {
+        const img = new Image();
+        img.onload = updateProgress;
+        img.onerror = updateProgress; 
+        img.src = currentFrame(i);
+        images.push(img);
+    }
 
-    // 3. Intro Animation Sequence
-    gsap.set("#logo-container", { 
-        top: "50%", 
-        left: "50%", 
-        xPercent: -50, 
-        yPercent: -50, 
-        scale: 1.2 
-    });
-    gsap.set(".nav-links", { opacity: 0 });
+    function startIntroTimeline() {
+        render(); // Initial render
 
-    const tlIntro = gsap.timeline({
-        onComplete: () => {
-            render(); // Double check render
-        }
-    });
+        const tlIntro = gsap.timeline();
 
-    tlIntro.from("#rotating-flower", { scale: 0, opacity: 0, duration: 1.5, ease: "back.out(1.7)" })
-           .from("#main-logo", { y: 20, opacity: 0, duration: 1, ease: "power2.out" }, "-=0.5")
-           .to("#loader", { 
-                opacity: 0, 
-                duration: 1, 
-                onComplete: () => {
-                    document.getElementById("loader").style.display = "none";
-                    render();
-                }
-           }, "+=0.5")
-           .to("#logo-container", { 
-                top: 40, 
-                left: 40, 
-                xPercent: 0, 
-                yPercent: 0, 
-                scale: 1, 
-                duration: 1.5, 
-                ease: "power3.inOut"
-           }, "-=0.5")
-           .to(".nav-links", { opacity: 1, duration: 1 }, "-=0.5")
-           .from(".nav-links a", { y: 10, opacity: 0, stagger: 0.1, duration: 0.8 }, "-=0.8");
+        tlIntro.to([progressContainer, progressText, loaderLogo], { opacity: 0, duration: 0.8, ease: "power2.in" })
+               .to("#loader", { 
+                    opacity: 0, 
+                    duration: 1.5, 
+                    ease: "power2.inOut",
+                    onComplete: () => {
+                        document.getElementById("loader").style.display = "none";
+                    }
+               }, "+=0.2")
+               .set("#logo-container", { 
+                    opacity: 1, 
+                    top: "50%", 
+                    left: "50%", 
+                    xPercent: -50, 
+                    yPercent: -50, 
+                    scale: 1.3 
+                }, "-=1.2")
+               .to("#logo-container", { 
+                    top: 40, 
+                    left: 40, 
+                    xPercent: 0, 
+                    yPercent: 0, 
+                    scale: 1, 
+                    duration: 1.8, 
+                    ease: "expo.inOut" 
+                }, "-=0.2")
+               .to("#luxury-navbar", { 
+                    opacity: 1, 
+                    y: 0, 
+                    duration: 1, 
+                    ease: "power2.out",
+                    onStart: () => {
+                        document.getElementById("luxury-navbar").style.pointerEvents = "auto";
+                    }
+                }, "-=0.8");
 
-    // 4. Scroll Animations
-    // Navbar Reveal on Scroll
-    gsap.to("#luxury-navbar", {
-        opacity: 1,
-        y: 0,
-        pointerEvents: "all",
-        scrollTrigger: {
-            trigger: "#scroll-section",
-            start: "10% top", // Reveal after 10% of scroll
-            end: "15% top",
-            scrub: true,
-            toggleActions: "play reverse play reverse"
-        }
-    });
-
-    gsap.to(airship, {
-        frame: frameCount - 1,
-        snap: "frame",
-        ease: "none",
-        scrollTrigger: {
-            trigger: "#scroll-section",
-            start: "top top",
-            end: "bottom bottom",
-            scrub: 0.5
-        },
-        onUpdate: render
-    });
+        // Scroll-bound animation for frames
+        gsap.to(airship, {
+            frame: frameCount - 1,
+            snap: "frame",
+            ease: "none",
+            scrollTrigger: {
+                trigger: "#scroll-section",
+                start: "top top",
+                end: "bottom bottom",
+                scrub: 0.5
+            },
+            onUpdate: render
+        });
+    }
 
     // Wedding Card Reveal
     gsap.to("#wedding-card-container", {

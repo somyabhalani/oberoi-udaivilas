@@ -25,20 +25,118 @@ body {
     width: 100%;
     height: 100vh;
     background: #ffffff;
-    z-index: 9999;
+    z-index: 25000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     pointer-events: none;
+    transition: opacity 1s ease;
+}
+
+#loader-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 320px;
+}
+
+#loader-logo-wrapper {
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+#loader-flower {
+    width: 45px;
+    margin-bottom: 10px;
+    animation: rotate-flower 10s linear infinite;
+    /* Rich Premium Gold Filter */
+    filter: brightness(0) saturate(100%) invert(69%) sepia(48%) saturate(396%) hue-rotate(354deg) brightness(89%) contrast(87%);
+}
+
+.loader-sig {
+    font-family: 'Pinyon Script', cursive;
+    font-size: 45px;
+    color: var(--gold);
+    text-align: center;
+    clip-path: inset(0 100% 0 0); /* Initial state for writing effect */
+}
+
+#progress-container {
+    width: 0px; /* Start at 0 for drawing effect */
+    height: 1px;
+    background: rgba(0,0,0,0.05);
+    margin-bottom: 20px;
+    border-radius: 1px;
+    overflow: hidden;
+    opacity: 0;
+}
+
+#progress-bar {
+    width: 0%;
+    height: 100%;
+    background: var(--gold);
+    transition: width 1.2s cubic-bezier(0.25, 0.1, 0.25, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+#progress-shimmer {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        rgba(255,255,255,0) 0%,
+        rgba(255,255,255,0.4) 50%,
+        rgba(255,255,255,0) 100%
+    );
+    animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+    100% { left: 100%; }
+}
+
+#progress-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #888;
+    opacity: 0;
+}
+
+.loader-sig {
+    font-family: 'Pinyon Script', cursive;
+    font-size: 45px;
+    color: #000;
+    animation: pulse-sig 3s ease-in-out infinite;
+}
+
+@keyframes pulse-sig {
+    0%, 100% { opacity: 0.6; transform: scale(0.98); }
+    50% { opacity: 1; transform: scale(1); }
 }
 
 /* Logo Identity */
 #logo-container {
     position: fixed;
-    top: 40px;
-    left: 40px;
-    z-index: 10000;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 26000;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0px; /* Zero gap to pull elements together */
+    gap: 0px;
+    opacity: 0; /* Hidden until loader content fades in */
+    pointer-events: none;
 }
 
 #rotating-flower {
@@ -46,6 +144,7 @@ body {
     height: 55px;
     animation: rotate-flower 20s linear infinite;
     margin-bottom: -10px; /* Pulls logo up */
+    filter: brightness(0) saturate(100%) invert(69%) sepia(48%) saturate(396%) hue-rotate(354deg) brightness(89%) contrast(87%);
 }
 
 #main-logo-wrapper {
@@ -65,16 +164,6 @@ body {
 @keyframes rotate-flower {
     from { transform: rotate(0deg); }
     to { transform: rotate(360deg); }
-}
-
-#main-logo-wrapper {
-    height: 80px;
-    overflow: hidden;
-}
-
-#main-logo {
-    height: 100%;
-    filter: brightness(0); /* Black Logo for White Background */
 }
 
 /* Luxury Navbar */
@@ -996,5 +1085,93 @@ body {
     .designed-by {
         font-size: 18px;
     }
+}
+
+/* Mobile Experience Overlay */
+#mobile-experience-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #ffffff;
+    z-index: 30000; /* Above everything */
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    #mobile-experience-overlay {
+        display: flex;
+    }
+}
+
+.mobile-overlay-content {
+    max-width: 400px;
+    animation: fadeIn 1s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.mobile-sig {
+    font-family: 'Pinyon Script', cursive;
+    font-size: 50px;
+    color: var(--gold);
+    margin-bottom: 10px;
+}
+
+.mobile-divider {
+    width: 50px;
+    height: 1px;
+    background: var(--gold);
+    margin: 30px auto;
+}
+
+.mobile-message {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    line-height: 1.6;
+    color: #1a1a1a;
+    margin-bottom: 15px;
+}
+
+.mobile-message span {
+    color: var(--gold);
+    font-weight: 700;
+}
+
+.mobile-subtext {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    color: #888;
+    line-height: 1.5;
+    margin-bottom: 40px;
+}
+
+#continue-mobile-btn {
+    background: var(--gold);
+    color: #ffffff;
+    border: none;
+    padding: 18px 35px;
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+    box-shadow: 0 10px 25px rgba(197, 160, 89, 0.2);
+}
+
+#continue-mobile-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(197, 160, 89, 0.3);
 }
 
