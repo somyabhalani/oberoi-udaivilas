@@ -1,0 +1,16 @@
+{
+  "name": "oberoi-udaivilas",
+  "version": "1.0.0",
+  "description": "The Oberoi Udaivilas website",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "engines": {
+    "node": "22.x"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
